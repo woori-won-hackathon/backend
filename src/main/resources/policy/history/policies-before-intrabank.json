@@ -1,0 +1,4851 @@
+{
+  "version": 4,
+  "scope": "DEVELOPMENT_DRAFT_NOT_BANK_APPROVED",
+  "sources": [
+    {
+      "sourceId": "CARD_ARS",
+      "title": "우리카드 분실신고 ARS",
+      "sourceUrl": "https://pc.wooricard.com/dcpc/yh1/cct/cct04/H1CCT204S06.do",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "분실신고 ARS 1588-5300, 365일 24시간. 분실신고·해제·확인과 금융사고 신고 메뉴 제공.",
+      "notes": "24시간 ARS 접수는 상담원 즉시 연결이나 모든 업무의 24시간 처리를 뜻하지 않는다."
+    },
+    {
+      "sourceId": "CARD_APP",
+      "title": "사용자가 제공한 우리은행 챗봇 분실 안내 화면",
+      "sourceUrl": null,
+      "sourceType": "USER_SCREENSHOT",
+      "evidenceStatus": "SCREENSHOT_ONLY",
+      "checkedOn": null,
+      "summary": "분실신고 버튼·우리WON카드 앱·우리카드 고객센터·영업점 안내. 해제는 별도 안내.",
+      "notes": "IMG_4469.PNG. 딥링크와 실제 인증·처리 완료 여부는 미확인."
+    },
+    {
+      "sourceId": "LIMIT_WEB",
+      "title": "인터넷/스마트뱅킹 이체한도 증액",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002&cc=c006332%3Ac009215&questionid=KNOW0000000188&DetailCategoryid=NODE0000000685",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "인터넷뱅킹은 조회·축소 가능. 증액은 WON뱅킹 비대면 실명확인 후 가능하며 보안매체에 따른 상한이 있다.",
+      "notes": ""
+    },
+    {
+      "sourceId": "PASSWORD",
+      "title": "이용자비밀번호 3회 오류해제",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCSD0008",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "비밀번호를 아는 고객의 3회 오류해제, 해제 중 재오류의 방문 안내, 만 19세 이상 내국인 개인의 비대면 재설정 안내.",
+      "notes": "옛 인증서 명칭이 남아 있음. 재오류와 모바일 재설정 안내의 적용 관계는 별도 확인 필요."
+    },
+    {
+      "sourceId": "MINOR_VISIT",
+      "title": "미성년자 본인 예금가입 시 부모 동행 여부",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002&cc=c006332%3Ac009215&questionid=KNOW0000000357&DetailCategoryid=NODE0000000690",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "만 14세 이상 미성년자는 본인 방문 가능. 만 14세 미만은 법정대리인에 의한 개설. 입출금계좌는 목적 증빙 확인 필요.",
+      "notes": ""
+    },
+    {
+      "sourceId": "MINOR_DOCS",
+      "title": "미성년자 예금 가입 준비서류",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002&cc=c006332%3Ac009215&questionid=KNOW0000000355&DetailCategoryid=NODE0000000690",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "본인 방문과 가족 대리 방문의 준비물을 구분하며, 서류 기재사항·발급기간·목적 증빙·추가서류 조건을 안내.",
+      "notes": ""
+    },
+    {
+      "sourceId": "TELE_LIMIT",
+      "title": "텔레뱅킹 이체한도 변경",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "본인 영업점 방문 또는 요건을 충족하는 스마트 키오스크 절차 안내.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "SECURITY_CHANGE",
+      "title": "OTP발생기에서 보안카드로 변경",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "기발급 보안카드를 계좌·추가인증 후 변경하며 이체한도가 감액됨.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "ATM_RESTORE",
+      "title": "자동화기기 이체한도 70만원 축소",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "제공 FAQ: 최근 1년 ATM 계좌이체 실적이 없으면 1일·1회 계좌이체 한도 70만원으로 하향. 2009-08-24는 이 조치의 시행일 안내이며 전체 정책의 유효 시작일로 사용하지 않음. 앱 경로는 전체메뉴 → 영업점/ATM → 자동화기기 한도복원으로 기재. 다른 공식 페이지 표현과 충돌하여 최신 기준 확인 필요.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "PC_SIMPLE",
+      "title": "인터넷뱅킹 간편이체",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "가입·지정 PC에서 즉시이체에 적용되는 별도 서비스와 한도 안내.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "OVERSEAS",
+      "title": "해외 체류 중 전자금융 제신고",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "해외영업점 또는 국내 대리인 절차. 이용자비밀번호 3회 오류해제는 국내 대리인 방법으로 안내.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "PRE_DEPARTURE",
+      "title": "출국 전 인터넷·스마트뱅킹 준비",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "해외IP·단말 지정·보안매체·인증서·비밀번호 오류·이체한도·계좌 상태·고객정보와 통신망 제약 확인.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "PASSWORD_DETAIL",
+      "title": "이용자비밀번호 3회 오류 인터넷 해제",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "기존 비밀번호를 알면 인터넷 오류해제, 모르면 WON 오류해제·변경 안내. 전자는 보안매체·인증서, 후자는 휴대폰인증·보안매체·인증서 입력. 아이디로그인은 불가하나 인증서 등 다른 로그인 가능. 기존 실명확인 재설정 FAQ와 절차별 적용범위 확인 필요.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "SECURITY_ERROR",
+      "title": "보안카드·OTP 오입력 초과",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "보안카드 연속 3회 또는 OTP 연속 10회 오입력 초과 시 이용 제한. WON 비대면 실명확인 후 오류해제, 인터넷뱅킹 오류해제 불가.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "EMPLOYEE_PASSWORD",
+      "title": "기업 직원ID 이용자비밀번호 재등록",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "조작자·결재자 직원ID는 마스터ID가 인터넷·스마트뱅킹에서 재등록. 비밀번호 분실 또는 오류횟수 있는 경우 해당. 재등록 시 오류횟수 삭제, 영업점 처리 불가.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "CONTACT_CHANGE",
+      "title": "고객정보 전화번호 변경",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "summary": "개인 인터넷뱅킹 정보변경 또는 WON 내정보에서 변경. 인터넷은 추가인증·보안매체·인증서 입력 필요. 온라인 변경 불가 시 신분증 지참 방문 또는 고객센터 문의.",
+      "notes": "사용자가 붙여넣은 FAQ. 원문 상세 URL·최신성 재확인 후 운영 승인."
+    },
+    {
+      "sourceId": "ATM_CONFLICT",
+      "title": "민원사례 FAQ의 ATM 복원 안내",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCSD0008",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "ATM 미사용 하향과 본인 방문/WON 복원 경로를 안내.",
+      "notes": "사용자 제공 ATM FAQ는 계좌이체 실적 기준/영업점·ATM 메뉴, 이 페이지는 입출금·이체 미사용/계좌조회·관리 메뉴. 우선 적용 버전 미확인."
+    },
+    {
+      "sourceId": "MINOR_SUP_CLOSE",
+      "title": "미성년자 예금 해지 시 준비서류가 궁금합니다.",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "미성년자 단독 방문 해지 불가. 친권자 확인 및 친권자 전원 동의 후 진행.",
+        "친권자 방문: 친권자 신분증, 자녀 기준 친권자 확인용 가족관계증명서·기본증명서 상세/특정, 통장·도장.",
+        "법정대리인 방문: 대리인 신분증, 자녀 기준 법정대리인 확인용 기본증명서 상세/특정, 통장·도장.",
+        "서류는 발급 3개월 이내, 성명·주민등록번호 13자리 확인 조건. 공동친권자 중 1인만 방문하면 다른 친권자의 해지 의사를 확인.",
+        "예금·주택청약 등 공통 준비사항이며 상품별 추가서류 가능."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_VISIT",
+      "title": "미성년자 본인 예금가입 시 부모님과 함께 가야하나요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002&cc=c006332%3Ac009215&questionid=KNOW0000000357&DetailCategoryid=NODE0000000690",
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "만 14세 이상 미성년자는 본인 방문 가입 가능. 만 14세 미만은 법정대리인에 의한 개설.",
+        "입출금계좌는 금융거래목적 증빙이 필요하며 미제출 시 개설 제한·보완서류 가능.",
+        "미성년자 명의 예금 제신고·해지는 친권자 전원 동의 필요."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_REGISTER",
+      "title": "(개인고객) 인터넷/스마트뱅킹 신규회원가입 방법",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "기존 우리은행 입출금·예적금 계좌가 있으면 인터넷에서 조회고객 가입 가능. 이체·인증서 발급은 WON 가입 또는 영업점 가입 안내.",
+        "인터넷 가입은 만 14세 이상, WON 가입은 만 17세 이상이라는 별도 기준.",
+        "웹: 개인인터넷뱅킹 → 아이디 로그인 영역 → 회원가입. WON: 첫 화면 시작하기.",
+        "WON은 휴대폰 본인확인·신분증 촬영·안면인식 등 비대면 실명확인을 거치며 인증서 발급·계좌 개설 등 절차는 고객 상황에 따라 다름.",
+        "비대면 진행 불가 시 신분증 지참 방문. 미성년자는 공식 필요서류 및 유의사항 확인."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_REMOTE_OPEN",
+      "title": "미성년자도 우리WON뱅킹으로 우리은행 계좌를 개설할 수 있나요?",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "본인명의 휴대폰과 비대면 실명인증이 가능한 주민등록증·운전면허증 필요. 이 문장만으로 고객별 개설 가능 여부나 모든 연령 요건 충족을 보장하지 않음."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_OPEN_DOCS",
+      "title": "미성년자 예금 가입 시 준비서류가 궁금합니다.",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002&cc=c006332%3Ac009215&questionid=KNOW0000000355&DetailCategoryid=NODE0000000690",
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "만 14세 미만은 단독 방문 불가, 법정대리인에 의한 개설.",
+        "만 14세 이상 본인: 성명·주민등록번호·사진을 확인할 수 있는 학생증·여권·청소년증(발급신청 확인서 포함), 성명·생년월일·성별·국적·주소가 확인되는 초본, 도장 또는 서명.",
+        "가족 대리: 부모·조부모 등 대리인 신분증, 가족관계 표시 증명서/등본, 도장. 형제·자매·삼촌·고모·이모·외삼촌은 해당 가족 대리 대상에서 제외.",
+        "친권자 확인이 어려우면 미성년자 기준 기본증명서 상세 필요. 만 14세 미만에서는 법정대리인 요건을 우선 적용.",
+        "목적 증빙, 실제주소 확인용 등·초본, 서류 발급 3개월 이내·성명·주민등록번호 전체 확인 조건. 상품별 추가서류 가능. 대리인은 서명거래 불가."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_REMOTE_CLOSE",
+      "title": "입출금통장도 인터넷/스마트뱅킹으로 해지 가능한가요?",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "일반 개인·개인사업자 입출식 계좌는 개설 1개월 이상·잔액 100만원 이하 등 조건과 상품/연결계좌 예외가 있음.",
+        "MMDA 포함. AMA 등 일부상품은 우리닷컴통장 전환 필요. 증권 연결·자동이체·수수료 결제·예적금 연결 등은 비대면 해지 불가할 수 있음.",
+        "만 19세 미만 미성년자 예금은 비대면 해지 불가. 영업점에서 친권자 전원 동의 확인 후 해지. 일반 성인 조건을 미성년자에게 적용하지 않음."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_CASH_CARD",
+      "title": "미성년자도 현금카드(금융IC) 발급이 가능한가요?",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "만 14세 이상 본인 또는 친권자 부모의 대리 영업점 방문 경로. 만 14세 미만 본인 발급은 불가.",
+        "본인: 주민등록증 원칙. 학생증·여권·청소년증 사용 시 주민등록등·초본으로 성명·주민등록번호·사진·실제주소 확인. 통장·도장(서명 가능).",
+        "부모 대리: 대리인 신분증, 부모·자녀 관계가 표시된 등본 또는 자녀 기준 가족관계증명서, 자녀 기준 기본증명서 상세/특정, 통장·도장.",
+        "KYC 주소 확인용 등·초본 등이 필요할 수 있음. 서류 발급 3개월 이내·성명·주민등록번호 전체 확인 조건."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_PROXY_SEAL",
+      "title": "미성년 자녀의 입출식 통장 개설시 부모님 서명으로 할수 있나요?",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "대리 개설은 서명거래 불가하며 친권자인 부모도 예외 아님. 부모 명의 도장으로 개설 가능하다는 안내."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_PHONE_DEPOSIT",
+      "title": "전화 예·적금 신규 서비스란?",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "우리은행 직원의 전화로 예적금 가입·재예치하는 서비스. 요청 날짜에 직원이 전화하며 안내 발신번호는 1599-3400.",
+        "우리은행 입출금계좌를 보유한 개인 대상이고 미성년자·외국인 등 일부 고객 제한.",
+        "신청은 24시간 가능하지만 17시 이후 당일 신청 불가. 직원 전화시간은 은행 영업일 09~17시. 본인인증 불가 등 이용 제한 가능.",
+        "상품가입 서비스 이용 제한과 일반 전화상담 가능 여부는 별개. 발신번호가 일치한다는 이유만으로 실제 발신자를 인증하지 않음."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "MINOR_SUP_HOUSING_TAX",
+      "title": "미성년자녀 명의의 주택청약(종합)저축으로 소득공제 받을 수 있나요?",
+      "sourceUrl": null,
+      "sourceType": "USER_PROVIDED_FAQ",
+      "evidenceStatus": "USER_EXCERPT",
+      "checkedOn": null,
+      "facts": [
+        "제공 FAQ는 근로자 본인 명의로 가입한 주택청약(종합)저축만 청약소득공제 가능하다고 안내. 다른 공제 요건·한도·개인별 세액은 이 FAQ에 없음."
+      ],
+      "notes": "사용자가 제공한 FAQ 정리. 이번 추가분은 웹 재검증·은행 승인 미완료. 원문 안내와 확정 금지 사항을 함께 기록."
+    },
+    {
+      "sourceId": "AUTO_FAQ_PENSION_FUND_AUTO",
+      "title": "연금저축펀드 자동이체를 등록하고 싶어요!",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "WON뱅킹 또는 인터넷뱅킹 자동이체등록 메뉴에서 등록할 수 있다. 입금계좌는 운용 중인 자계좌로 지정한다. 출금계좌는 입출금계좌 또는 동일 모계좌의 연금MMF로 지정한다. 자동이체 등록금액의 연간 합계는 납입한도를 초과할 수 없다.",
+      "facts": [
+        "WON뱅킹 또는 인터넷뱅킹 자동이체등록 메뉴에서 등록할 수 있다.",
+        "입금계좌는 운용 중인 자계좌로 지정한다. 출금계좌는 입출금계좌 또는 동일 모계좌의 연금MMF로 지정한다.",
+        "자동이체 등록금액의 연간 합계는 납입한도를 초과할 수 없다."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "연금저축펀드",
+        "exactQuestion": "연금저축펀드 자동이체를 등록하고 싶어요!"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_SAVINGS_AUTO_SKIP",
+      "title": "적금에 자동이체 연결 했는데, 이번달만 자동이체 안하고 싶어요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "적금 자동이체는 한 회차 납입만 일시중지할 수 없다. 기존 자동이체 해지 후 향후 납입일자에 시작하도록 재등록하는 방법이 있다. 해당 월 납입을 막으려면 이체지정일 전 영업일까지 해지해야 한다. 정기적립식 상품을 재등록하면 미납회차를 확인하여 등록일 다음 영업일에 미납회차가 일괄 출금된다.",
+      "facts": [
+        "적금 자동이체는 한 회차 납입만 일시중지할 수 없다.",
+        "기존 자동이체 해지 후 향후 납입일자에 시작하도록 재등록하는 방법이 있다.",
+        "해당 월 납입을 막으려면 이체지정일 전 영업일까지 해지해야 한다.",
+        "정기적립식 상품을 재등록하면 미납회차를 확인하여 등록일 다음 영업일에 미납회차가 일괄 출금된다."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "적금에 자동이체 연결 했는데, 이번달만 자동이체 안하고 싶어요?"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_FUND_AUTO_MISSED",
+      "title": "적립식 펀드 자동이체중인데, 인출이 안됐어요!",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "펀드는 예약거래로 자동이체일에 출금계좌 잔액이 부족하면 자동이체되지 않는다. 자동이체일 오전 11시 전까지 잔액이 있어야 출금된다. 현금화되지 않은 수표·어음은 출금할 수 없다.",
+      "facts": [
+        "펀드는 예약거래로 자동이체일에 출금계좌 잔액이 부족하면 자동이체되지 않는다.",
+        "자동이체일 오전 11시 전까지 잔액이 있어야 출금된다.",
+        "현금화되지 않은 수표·어음은 출금할 수 없다."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "적립식 펀드 자동이체중인데, 인출이 안됐어요!"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_SOLE_PROPRIETOR_TRANSFER_FEE",
+      "title": "개인사업자가 다른은행으로 이체할 때 수수료를 면제 받을 수 있나요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "개인사업자의 타행 이체수수료는 횟수 제한 없이 전액 면제된다고 안내한다. FAQ에 기재된 시행일은 2023-02-08이다. 안내된 면제 범위는 인터넷뱅킹·스마트뱅킹 이체수수료 및 타행 자동이체 수수료다.",
+      "facts": [
+        "개인사업자의 타행 이체수수료는 횟수 제한 없이 전액 면제된다고 안내한다. FAQ에 기재된 시행일은 2023-02-08이다.",
+        "안내된 면제 범위는 인터넷뱅킹·스마트뱅킹 이체수수료 및 타행 자동이체 수수료다."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "개인사업자가 다른은행으로 이체할 때 수수료를 면제 받을 수 있나요?"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_HOUSING_AUTO_TAX_LIMIT",
+      "title": "청약통장에 '세금우대 한도초과로 자동이체가 미처리 되었습니다' 라는 문자를 받았어요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "해당 문구는 청약 가입 시 설정한 세금우대(비과세)한도까지 입금되어 추가 입금과 본부 일괄 자동이체가 처리되지 않았다는 안내다. FAQ는 세금우대 제도가 2015년부터 폐지되어 세금우대한도 증액이 불가하다고 안내한다. 기존 혜택을 유지하려면 추가 입금 없이 계좌를 유지한 후 해지하는 방법이 있다. 매월 미처리 문자를 중단하려면 자동이체만 해지한다. 추가 입금을 원하면 일반과세로 전환해야 한다. 영업점 방문 시 본인 신분증을 준비한다. 인터넷뱅킹: 로그인 → 전계좌 조회 → 거래내역조회 → 주택청약종합저축 → 일반과세 전환. WON뱅킹: 로그인 → 전체메뉴 → 계좌조회/관리 → 청약계좌 → 계좌관리 일반과세 전환. 원문의 계조관리 표기는 오탈자로 보고 계좌관리로 표기했으며 실제 메뉴는 확인한다. 전환일부터 발생한 이자는 일반세율이 적용되고, 한도 초과로 미처리된 자동이체 금액이 일괄 출금된다. 일괄출금을 원하지 않으면 기존 자동이체 해지 후 다시 신청하는 방법을 확인한다.",
+      "facts": [
+        "해당 문구는 청약 가입 시 설정한 세금우대(비과세)한도까지 입금되어 추가 입금과 본부 일괄 자동이체가 처리되지 않았다는 안내다.",
+        "FAQ는 세금우대 제도가 2015년부터 폐지되어 세금우대한도 증액이 불가하다고 안내한다.",
+        "기존 혜택을 유지하려면 추가 입금 없이 계좌를 유지한 후 해지하는 방법이 있다. 매월 미처리 문자를 중단하려면 자동이체만 해지한다.",
+        "추가 입금을 원하면 일반과세로 전환해야 한다. 영업점 방문 시 본인 신분증을 준비한다.",
+        "인터넷뱅킹: 로그인 → 전계좌 조회 → 거래내역조회 → 주택청약종합저축 → 일반과세 전환.",
+        "WON뱅킹: 로그인 → 전체메뉴 → 계좌조회/관리 → 청약계좌 → 계좌관리 일반과세 전환. 원문의 계조관리 표기는 오탈자로 보고 계좌관리로 표기했으며 실제 메뉴는 확인한다.",
+        "전환일부터 발생한 이자는 일반세율이 적용되고, 한도 초과로 미처리된 자동이체 금액이 일괄 출금된다.",
+        "일괄출금을 원하지 않으면 기존 자동이체 해지 후 다시 신청하는 방법을 확인한다."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "청약통장에 '세금우대 한도초과로 자동이체가 미처리 되었습니다' 라는 문자를 받았어요?"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_DEMAND_ACCOUNT_CLOSURE",
+      "title": "입출금통장도 인터넷/스마트뱅킹으로 해지 가능한가요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "개인·개인사업자의 개설 1개월 이상, 잔액 100만원 이하 입출식 계좌(MMDA 포함)는 비대면 해지 기준에 해당한다. AMA 등 일부 상품은 우리닷컴통장으로 종류를 전환한 후 해지해야 한다. 사이버증권 연결·자동이체 등록·수수료 결제·예적금 연결계좌 등 비대면 해지 불가 경우는 영업점 해지 대상이다. 만 19세 미만 예금은 비대면 해지 불가하며 영업점에서 친권자 전원 동의를 확인한다.",
+      "facts": [
+        "개인·개인사업자의 개설 1개월 이상, 잔액 100만원 이하 입출식 계좌(MMDA 포함)는 비대면 해지 기준에 해당한다.",
+        "AMA 등 일부 상품은 우리닷컴통장으로 종류를 전환한 후 해지해야 한다.",
+        "사이버증권 연결·자동이체 등록·수수료 결제·예적금 연결계좌 등 비대면 해지 불가 경우는 영업점 해지 대상이다.",
+        "만 19세 미만 예금은 비대면 해지 불가하며 영업점에서 친권자 전원 동의를 확인한다."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "입출금통장도 인터넷/스마트뱅킹으로 해지 가능한가요?"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_INTERBANK_AUTO",
+      "title": "우리은행에서 다른은행 통장으로 자동이체 가능한가요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "타행 자동이체는 지정일에 우리은행 계좌에서 출금하여 당일 수취은행 지정계좌로 입금한다. 출금일에 잔액 부족 등으로 미처리되면 이후 잔액을 채워도 추가 출금하지 않는다. 현금화 전 타행수표 자금도 출금되지 않는다. 등록 경로: 영업점 본인 신분증 지참, 인터넷뱅킹 자동이체 메뉴, WON뱅킹 원화 자동이체 등록, 텔레뱅킹 ARS 533. 인터넷뱅킹: 로그인 → 이체 → 자동이체 → 자동이체 조회/등록/변경/해지. WON뱅킹: 로그인 → 전체메뉴 → 이체/출금 → 자동이체 등록/관리 → 자동이체등록하기 → 원화 자동이체 등록. 텔레뱅킹: 1588/1599/1533-5000 → ARS 533 계좌 및 은행간 자동이체 등록.",
+      "facts": [
+        "타행 자동이체는 지정일에 우리은행 계좌에서 출금하여 당일 수취은행 지정계좌로 입금한다.",
+        "출금일에 잔액 부족 등으로 미처리되면 이후 잔액을 채워도 추가 출금하지 않는다.",
+        "현금화 전 타행수표 자금도 출금되지 않는다.",
+        "등록 경로: 영업점 본인 신분증 지참, 인터넷뱅킹 자동이체 메뉴, WON뱅킹 원화 자동이체 등록, 텔레뱅킹 ARS 533.",
+        "인터넷뱅킹: 로그인 → 이체 → 자동이체 → 자동이체 조회/등록/변경/해지.",
+        "WON뱅킹: 로그인 → 전체메뉴 → 이체/출금 → 자동이체 등록/관리 → 자동이체등록하기 → 원화 자동이체 등록.",
+        "텔레뱅킹: 1588/1599/1533-5000 → ARS 533 계좌 및 은행간 자동이체 등록."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "우리은행에서 다른은행 통장으로 자동이체 가능한가요?"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_RENT_PAYMENT_STATEMENT",
+      "title": "인터넷뱅킹에서 월세납입내역서를 발급할 수 있나요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "우리은행에서 자동이체 또는 계좌이체 시 월세로 선택하여 이체한 거래는 월세납입내역서 발급 대상이다. 본인 신분증을 지참한 영업점 방문 또는 인터넷뱅킹에서 발급한다. 개인인터넷뱅킹 로그인 → 뱅킹관리 → 증명서발급 → 월세납입내역서 → 조회 → 증명서 인쇄.",
+      "facts": [
+        "우리은행에서 자동이체 또는 계좌이체 시 월세로 선택하여 이체한 거래는 월세납입내역서 발급 대상이다.",
+        "본인 신분증을 지참한 영업점 방문 또는 인터넷뱅킹에서 발급한다.",
+        "개인인터넷뱅킹 로그인 → 뱅킹관리 → 증명서발급 → 월세납입내역서 → 조회 → 증명서 인쇄."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "인터넷뱅킹에서 월세납입내역서를 발급할 수 있나요?"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_IRP_AUTO_LIMIT",
+      "title": "개인형IRP로 입금 시 '입금금액 한도 초과입니다' 라는 메시지가 확인됩니다.",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "FAQ는 연금저축을 포함한 전 금융기관 연 1800만원 범위와 사전 신청한 연간입금 한도를 안내한다. 시도 금액과 올해 입금액 합계가 신청한 한도를 넘은 경우, 잔여 한도 내에서 인터넷뱅킹·WON뱅킹으로 한도를 조정할 수 있다. 잔여 배정 한도가 없으면 타 상품의 배정 한도를 축소한 뒤 증액하는 경로를 안내한다. 우리은행 입출금통장에서 IRP로 등록한 자동이체의 직전 1회 미출금액은 연간한도 증액 시 인출된다. 원치 않으면 먼저 자동이체를 해지한 후 증액한다. 인터넷 한도: 개인 로그인 → 예금/신탁 → 연금신탁관리 → 납입한도 등록/변경 → 개인IRP/연금저축 조회 후 변경. 인터넷 자동이체 해지: 이체 → 자동이체 → 자동이체조회/등록/변경 → 출금계좌 조회 → 개인형IRP 자동이체 선택 후 해지. WON 한도: 상품 → 퇴직연금 → MY 퇴직연금관리 → 퇴직연금서비스 전체보기 → 계좌관리하기 → 연금저축한도관리. WON 자동이체 해지: 상품 → 퇴직연금 → MY 퇴직연금관리 → 자동이체 관리.",
+      "facts": [
+        "FAQ는 연금저축을 포함한 전 금융기관 연 1800만원 범위와 사전 신청한 연간입금 한도를 안내한다.",
+        "시도 금액과 올해 입금액 합계가 신청한 한도를 넘은 경우, 잔여 한도 내에서 인터넷뱅킹·WON뱅킹으로 한도를 조정할 수 있다.",
+        "잔여 배정 한도가 없으면 타 상품의 배정 한도를 축소한 뒤 증액하는 경로를 안내한다.",
+        "우리은행 입출금통장에서 IRP로 등록한 자동이체의 직전 1회 미출금액은 연간한도 증액 시 인출된다. 원치 않으면 먼저 자동이체를 해지한 후 증액한다.",
+        "인터넷 한도: 개인 로그인 → 예금/신탁 → 연금신탁관리 → 납입한도 등록/변경 → 개인IRP/연금저축 조회 후 변경.",
+        "인터넷 자동이체 해지: 이체 → 자동이체 → 자동이체조회/등록/변경 → 출금계좌 조회 → 개인형IRP 자동이체 선택 후 해지.",
+        "WON 한도: 상품 → 퇴직연금 → MY 퇴직연금관리 → 퇴직연금서비스 전체보기 → 계좌관리하기 → 연금저축한도관리.",
+        "WON 자동이체 해지: 상품 → 퇴직연금 → MY 퇴직연금관리 → 자동이체 관리."
+      ],
+      "provenance": "USER_PROVIDED_FAQ_AND_OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "개인형IRP로 입금 시 '입금금액 한도 초과입니다' 라는 메시지가 확인됩니다."
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_FAQ_TEENTEN_AUTO_RESTRICTION",
+      "title": "자동이체 등록은 가능한가요?",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQCCS0002",
+      "sourceType": "OFFICIAL_FAQ",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "우리틴틴은 선불전자지급수단으로 휴대폰요금·렌탈요금 등의 자동이체·자동납부 계좌로 등록할 수 없다.",
+      "facts": [
+        "우리틴틴은 선불전자지급수단으로 휴대폰요금·렌탈요금 등의 자동이체·자동납부 계좌로 등록할 수 없다."
+      ],
+      "provenance": "OFFICIAL_SITE_CHECK",
+      "lookup": {
+        "searchTerm": "자동이체",
+        "exactQuestion": "자동이체 등록은 가능한가요?"
+      },
+      "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    }
+  ],
+  "policies": [
+    {
+      "policyCode": "CARD_LOSS",
+      "intent": "CARD_LOSS",
+      "title": "카드분실 및 신고 후 문의",
+      "customerScope": "ISSUER_DEPENDENT",
+      "productScope": "CARD",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "TRANSFER_LIMIT",
+      "intent": "TRANSFER_LIMIT",
+      "title": "이체한도 종류별 처리",
+      "customerScope": "CHANNEL_DEPENDENT",
+      "productScope": "ELECTRONIC_BANKING",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "USER_PASSWORD",
+      "intent": "USER_PASSWORD_ERROR",
+      "title": "이용자 비밀번호 오류·재설정",
+      "customerScope": "CONDITION_DEPENDENT",
+      "productScope": "INTERNET_MOBILE_BANKING",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "MINOR_ELIGIBILITY",
+      "intent": "MINOR_ACCOUNT_PREPARATION",
+      "title": "미성년자 방문 가능 기준",
+      "customerScope": "MINOR",
+      "productScope": "DEMAND_DEPOSIT",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "MINOR_DOCUMENTS",
+      "intent": "MINOR_ACCOUNT_PREPARATION",
+      "title": "미성년자 방문 유형별 준비서류",
+      "customerScope": "MINOR",
+      "productScope": "DEMAND_DEPOSIT",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "OVERSEAS_PREPARATION",
+      "intent": "OVERSEAS_BANKING_PREPARATION",
+      "title": "출국 전 전자금융 준비",
+      "customerScope": "CONDITION_DEPENDENT",
+      "productScope": "INTERNET_MOBILE_BANKING",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "SECURITY_MEDIA_PASSWORD",
+      "intent": "SECURITY_MEDIA_PASSWORD_ERROR",
+      "title": "보안카드·OTP 오류해제",
+      "customerScope": "CONDITION_DEPENDENT",
+      "productScope": "SECURITY_MEDIA",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "EMPLOYEE_PASSWORD",
+      "intent": "CORPORATE_EMPLOYEE_PASSWORD_ERROR",
+      "title": "기업 직원ID 비밀번호 관리",
+      "customerScope": "CORPORATE_EMPLOYEE",
+      "productScope": "CORPORATE_BANKING",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "CONTACT_CHANGE",
+      "intent": "CONTACT_PHONE_CHANGE",
+      "title": "고객정보 전화번호 변경",
+      "customerScope": "INDIVIDUAL",
+      "productScope": "CUSTOMER_PROFILE",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 3
+    },
+    {
+      "policyCode": "MINOR_CLOSURE",
+      "intent": "MINOR_DEPOSIT_CLOSURE",
+      "title": "미성년자 예금 해지",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 1
+    },
+    {
+      "policyCode": "MINOR_REGISTRATION",
+      "intent": "MINOR_EBANKING_REGISTRATION",
+      "title": "미성년자 전자뱅킹 회원가입",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 1
+    },
+    {
+      "policyCode": "MINOR_REMOTE_OPEN",
+      "intent": "MINOR_REMOTE_ACCOUNT_OPENING",
+      "title": "미성년자 WON 계좌 개설 준비",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 1
+    },
+    {
+      "policyCode": "MINOR_CASH_CARD",
+      "intent": "MINOR_CASH_CARD_ISSUANCE",
+      "title": "미성년자 현금카드 발급",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 1
+    },
+    {
+      "policyCode": "MINOR_PROXY_SIGNATURE",
+      "intent": "MINOR_PROXY_OPENING_SIGNATURE",
+      "title": "부모 대리 개설 서명·도장",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 1
+    },
+    {
+      "policyCode": "MINOR_PHONE_DEPOSIT",
+      "intent": "MINOR_PHONE_DEPOSIT_ELIGIBILITY",
+      "title": "미성년자의 전화 예적금 가입 문의",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 1
+    },
+    {
+      "policyCode": "MINOR_HOUSING_TAX",
+      "intent": "MINOR_HOUSING_TAX_DEDUCTION",
+      "title": "자녀 명의 청약 소득공제 문의",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 1
+    },
+    {
+      "policyCode": "PENSION_FUND_AUTO",
+      "intent": "AUTO_TRANSFER_REGISTRATION",
+      "title": "연금저축펀드 자동이체 등록",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "PENSION_SAVINGS_FUND",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "SAVINGS_AUTO_SKIP",
+      "intent": "AUTO_TRANSFER_SKIP_INSTALLMENT",
+      "title": "적금 자동이체 한 회차 건너뛰기",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "INSTALLMENT_SAVINGS",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "FUND_AUTO_MISSED",
+      "intent": "AUTO_TRANSFER_NOT_PROCESSED",
+      "title": "적립식 펀드 자동이체 미출금",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "INSTALLMENT_FUND",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "SOLE_PROPRIETOR_TRANSFER_FEE",
+      "intent": "TRANSFER_FEE_GUIDANCE",
+      "title": "개인사업자 타행 이체수수료 안내",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "TRANSFER",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "HOUSING_AUTO_TAX_LIMIT",
+      "intent": "AUTO_TRANSFER_TAX_LIMIT",
+      "title": "청약 세금우대한도 초과 자동이체 미처리",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "HOUSING_SUBSCRIPTION",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "DEMAND_ACCOUNT_CLOSURE",
+      "intent": "DEMAND_ACCOUNT_CLOSURE",
+      "title": "입출금계좌 비대면 해지와 연결 서비스 제한",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "DEMAND_DEPOSIT",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "INTERBANK_AUTO",
+      "intent": "INTERBANK_AUTO_TRANSFER",
+      "title": "타행 자동이체 등록·미처리·관리 안내",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "INTERBANK_TRANSFER",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "RENT_PAYMENT_STATEMENT",
+      "intent": "RENT_PAYMENT_STATEMENT",
+      "title": "월세납입내역서 발급",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "TRANSFER",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "IRP_AUTO_LIMIT",
+      "intent": "IRP_CONTRIBUTION_LIMIT",
+      "title": "IRP 납입한도 초과와 미출금 자동이체",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "IRP",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "TEENTEN_AUTO_RESTRICTION",
+      "intent": "AUTO_TRANSFER_REGISTRATION",
+      "title": "우리틴틴 자동이체 계좌 등록 제한",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "WOORI_TEENTEN",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    }
+  ],
+  "branches": [
+    {
+      "branchCode": "CARD_REPORT",
+      "policyCode": "CARD_LOSS",
+      "title": "우리카드 분실신고 경로 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "issuer",
+            "op": "EQ",
+            "value": "WOORI_CARD"
+          },
+          {
+            "field": "requestKind",
+            "op": "EQ",
+            "value": "REPORT_LOSS"
+          }
+        ]
+      },
+      "sourceIds": [
+        "CARD_ARS",
+        "CARD_APP"
+      ],
+      "officialSteps": [
+        "분실신고 기능 또는 우리WON카드의 공식 절차를 안내한다.",
+        "앱 이용이 어렵다면 분실신고 ARS 1588-5300 경로를 제공한다.",
+        "신고 여부는 공식 화면에서 확인하도록 안내한다."
+      ],
+      "remainingChecks": [
+        "실제 신고 완료 여부",
+        "고객의 앱 이용 가능 여부",
+        "앱 딥링크 검증"
+      ],
+      "restrictions": [
+        "챗봇 안내를 신고 완료로 표시하지 않는다.",
+        "위험 대응 안내 전에 문답을 길게 하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SCREENSHOT_PARTIAL",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "issuer",
+          "requestKind"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_CARD",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "CARD_UNKNOWN_PAYMENT",
+      "policyCode": "CARD_LOSS",
+      "title": "분실과 본인 미인지 결제 동시 진술",
+      "conditions": {
+        "all": [
+          {
+            "field": "issuer",
+            "op": "EQ",
+            "value": "WOORI_CARD"
+          },
+          {
+            "field": "unknownPayment",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "CARD_ARS"
+      ],
+      "officialSteps": [
+        "카드 분실신고 경로를 먼저 제시한다.",
+        "모르는 결제는 우리카드에 확인하도록 안내한다."
+      ],
+      "remainingChecks": [
+        "신고 완료 여부",
+        "부정사용 여부는 카드사 확인 필요"
+      ],
+      "restrictions": [
+        "부정사용·환급을 확정하지 않는다.",
+        "대기 없는 사람 연결을 약속하지 않는다.",
+        "사고 가능성이 있으면 공식 긴급 대응 경로를 지연시키지 않는다. 상담 채널 판단은 별도로 수행한다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "issuer",
+          "unknownPayment"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_CARD",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "CARD_RELEASE",
+      "policyCode": "CARD_LOSS",
+      "title": "신고한 카드를 찾은 후 해제 문의",
+      "conditions": {
+        "all": [
+          {
+            "field": "issuer",
+            "op": "EQ",
+            "value": "WOORI_CARD"
+          },
+          {
+            "field": "requestKind",
+            "op": "EQ",
+            "value": "RELEASE_LOSS"
+          }
+        ]
+      },
+      "sourceIds": [
+        "CARD_ARS",
+        "CARD_APP"
+      ],
+      "officialSteps": [
+        "신규 분실신고와 구분하여 분실해제 절차를 안내한다.",
+        "우리WON카드 앱 또는 우리카드 ARS의 해제 안내를 제공한다."
+      ],
+      "remainingChecks": [
+        "이미 재발급·해지했는지",
+        "해당 카드 해제 가능 여부"
+      ],
+      "restrictions": [
+        "찾았다는 이유로 바로 사용 가능하다고 확정하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SCREENSHOT_PARTIAL",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "issuer",
+          "requestKind"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_CARD",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_ELECTRONIC_INCREASE",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "인터넷·스마트뱅킹 증액",
+      "conditions": {
+        "all": [
+          {
+            "field": "limitType",
+            "op": "EQ",
+            "value": "ELECTRONIC"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "INCREASE"
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "LIMIT_WEB"
+      ],
+      "officialSteps": [
+        "인터넷뱅킹에서는 증액할 수 없음을 안내한다.",
+        "WON뱅킹의 휴대폰 본인확인·신분증 촬영·안면인식 절차를 안내한다.",
+        "보안카드는 1회 500만원/1일 1000만원, OTP는 1회 1억원/1일 5억원 이하 범위임을 구분한다.",
+        "요청 금액이 보안카드 범위를 넘으면 보안매체 변경 필요성을 안내한다."
+      ],
+      "remainingChecks": [
+        "보안매체",
+        "필요할 때만 요청하는 1회·1일 희망 한도",
+        "앱 인증 가능 여부"
+      ],
+      "restrictions": [
+        "고객에게 실제 적용 가능한 최대한도나 증액 완료를 보장하지 않는다.",
+        "한도제한계좌 해제와 혼동하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "limitType",
+          "operation",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_ELECTRONIC_LOOKUP",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "인터넷뱅킹 한도 조회·축소",
+      "conditions": {
+        "all": [
+          {
+            "field": "limitType",
+            "op": "EQ",
+            "value": "ELECTRONIC"
+          },
+          {
+            "field": "operation",
+            "op": "IN",
+            "value": [
+              "LOOKUP",
+              "DECREASE"
+            ]
+          }
+        ]
+      },
+      "sourceIds": [
+        "LIMIT_WEB"
+      ],
+      "officialSteps": [
+        "인터넷뱅킹에서 조회·축소할 수 있는 업무로 안내한다.",
+        "인터넷·스마트뱅킹이 통합 한도임을 안내한다."
+      ],
+      "remainingChecks": [
+        "정확한 앱/웹 이동 경로와 인증 조건"
+      ],
+      "restrictions": [
+        "조회한 실제 한도가 없으면 숫자를 추측하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "limitType",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_TELE",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "텔레뱅킹 한도 변경",
+      "conditions": {
+        "all": [
+          {
+            "field": "limitType",
+            "op": "EQ",
+            "value": "TELEBANKING"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "CHANGE"
+          }
+        ]
+      },
+      "sourceIds": [
+        "TELE_LIMIT"
+      ],
+      "officialSteps": [
+        "본인 영업점 방문 변경을 안내한다.",
+        "신분증과 실제주소 확인용 주민등록등·초본 준비를 안내한다.",
+        "19세 이상 개인의 스마트 키오스크는 바이오정보·화상상담 절차를 별도 확인한다. 제공 FAQ의 상담센터는 1800-5000이다."
+      ],
+      "remainingChecks": [
+        "스마트 키오스크 이용 요건·설치 위치",
+        "원문 최신성"
+      ],
+      "restrictions": [
+        "전화상담을 통한 실제 한도 변경이 가능하다고 안내하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "limitType",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_ATM",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "장기 미사용 ATM 한도 복원",
+      "conditions": {
+        "all": [
+          {
+            "field": "limitType",
+            "op": "EQ",
+            "value": "ATM"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "RESTORE"
+          }
+        ]
+      },
+      "sourceIds": [
+        "ATM_RESTORE",
+        "ATM_CONFLICT"
+      ],
+      "officialSteps": [
+        "본인 영업점 방문 또는 WON뱅킹의 자동화기기 한도복원 기능을 안내한다.",
+        "영업점은 신분증과 실제주소 확인용 주민등록등·초본 준비를 안내한다.",
+        "제공 FAQ의 비대면 조건은 19세 이상 대한민국 국적 개인, 본인명의 휴대폰·신분증·안면인식 본인확인이다.",
+        "제공 FAQ의 복원 범위는 1일 출금 600만원, 계좌이체 3000만원까지다. 개인별 실제 적용은 별도 확인한다."
+      ],
+      "remainingChecks": [
+        "원문 간 미사용 판정 기준 차이",
+        "현재 앱의 메뉴 경로",
+        "실제 축소 원인",
+        "개인별 복원 가능 한도"
+      ],
+      "restrictions": [
+        "70만원이라는 금액만으로 장기 미사용이 원인이라고 확정하지 않는다.",
+        "상충하는 메뉴 경로를 확정하여 표시하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_CONFLICT",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "limitType",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_SECURITY_DOWNGRADE",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "OTP에서 보안카드로 변경",
+      "conditions": {
+        "all": [
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "OTP_TO_SECURITY_CARD"
+          }
+        ]
+      },
+      "sourceIds": [
+        "SECURITY_CHANGE"
+      ],
+      "officialSteps": [
+        "보안카드가 발급되어 있는지 확인한다.",
+        "개인인터넷뱅킹 → 뱅킹관리 → 보안관리 → 보안서비스관리 → 보안수단변경에서 계좌인증·추가인증을 거친다.",
+        "WON뱅킹 변경도 안내되어 있으며, 변경 시 인터넷·스마트뱅킹 한도가 줄어듦을 알린다."
+      ],
+      "remainingChecks": [
+        "보안카드 발급 여부",
+        "인증 가능 여부",
+        "변경 후 고객별 적용 한도"
+      ],
+      "restrictions": [
+        "보안카드 번호·OTP 값을 채팅으로 받지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_PC_SIMPLE",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "PC 간편이체와 일반 전자금융 한도 구분",
+      "conditions": {
+        "all": [
+          {
+            "field": "limitType",
+            "op": "EQ",
+            "value": "PC_SIMPLE_TRANSFER"
+          }
+        ]
+      },
+      "sourceIds": [
+        "PC_SIMPLE"
+      ],
+      "officialSteps": [
+        "개인인터넷뱅킹 → 뱅킹관리 → 간편이체 서비스에서 가입하고 이용할 PC를 지정단말로 등록하는 절차를 안내한다.",
+        "1일 500만원 이내이면서 전자금융 한도를 넘지 않는 범위임을 안내한다.",
+        "예약이체·한도 초과·미지정 PC에는 적용되지 않으며 보안 입력이 다시 필요할 수 있다."
+      ],
+      "remainingChecks": [
+        "PC와 WON 중 사용하는 서비스",
+        "서비스 가입·단말 지정 여부"
+      ],
+      "restrictions": [
+        "PC 간편이체를 WON의 동일 서비스라고 안내하지 않는다.",
+        "인증 생략을 보장하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "limitType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_WON_CERT",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "WON인증서 이체의 인증 절차 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "limitType",
+            "op": "EQ",
+            "value": "WON_CERT_TRANSFER"
+          }
+        ]
+      },
+      "sourceIds": [
+        "PC_SIMPLE"
+      ],
+      "officialSteps": [
+        "WON에서는 PC 간편이체 서비스가 제공되지 않음을 구분한다.",
+        "제공 FAQ는 우리WON인증서 로그인 후 1000만원 이내 이체는 보안매체 없이 우리WON인증서로 가능하다고 안내한다.",
+        "제공 FAQ의 소액이체 300만원 이하 인증서 입력 생략 안내를 설명한다."
+      ],
+      "remainingChecks": [
+        "WON인증서 로그인 여부",
+        "실제 앱의 인증 요구",
+        "현재 고객별 한도·거래 제한"
+      ],
+      "restrictions": [
+        "인증 절차 기준 금액을 고객의 이체한도로 해석하지 않는다.",
+        "인증을 우회하거나 언제나 생략 가능하다고 보장하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "limitType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "LIMIT_OVERSEAS",
+      "policyCode": "TRANSFER_LIMIT",
+      "title": "해외 체류 중 증액 제신고",
+      "conditions": {
+        "all": [
+          {
+            "field": "limitType",
+            "op": "EQ",
+            "value": "ELECTRONIC"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "INCREASE"
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "OVERSEAS"
+      ],
+      "officialSteps": [
+        "국내 관리점·개설점과 먼저 상담한다.",
+        "본국 파견직원 여부를 확인한 해외영업점 경로와 국내 대리인 경로를 확인한다.",
+        "해외영업점 경로는 한국 발급 유효 신분증·전자금융이용신청서와 국내 송부 절차를 확인한다.",
+        "국내 대리인 경로는 본인이 전자금융이용신청서·한국 발급 유효 신분증 사본·위임 관련 서류를 준비해 우편발송한다.",
+        "대리인은 가족관계 확인서류(3개월 이내·주민등록번호 모두 표시)와 대리인 신분증을 추가해 국내영업점에 방문한다.",
+        "위임 관련 서류는 영사확인 위임장·아포스티유 협약국 확인 공문서(공증문서)·화상공증 중 적용 방식을 확인한다.",
+        "신청서는 본인 자필작성·서명이 필요하다. 홈페이지 전체메뉴 → 기타서비스 → 고객광장 → 서식/약관/자료실 → 전자금융 → 필요서류에서 확인한다."
+      ],
+      "remainingChecks": [
+        "국내 담당 영업점",
+        "해외영업점 처리 가능 여부",
+        "서류와 시간·비용"
+      ],
+      "restrictions": [
+        "해외라는 이유만으로 모든 비대면 절차가 불가능하다고 단정하지 않는다.",
+        "전화상담이 제신고 완료를 의미하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "limitType",
+          "operation",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "DOMESTIC_BRANCH",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "PRE_DEPARTURE_CHECKLIST",
+      "policyCode": "OVERSEAS_PREPARATION",
+      "title": "출국 전 전자금융 이용 준비",
+      "conditions": {
+        "all": [
+          {
+            "field": "travelStage",
+            "op": "EQ",
+            "value": "BEFORE_DEPARTURE"
+          }
+        ]
+      },
+      "sourceIds": [
+        "PRE_DEPARTURE"
+      ],
+      "officialSteps": [
+        "제공 FAQ는 해외IP차단서비스 해제를 필수로, 단말기지정서비스 해제 또는 미지정기기 옵션 허용을 권장사항으로 안내한다.",
+        "OTP·디지털OTP 사용자의 보안카드 지참 권장과 비상시 매체 변경에 따른 한도 하향 가능성을 안내한다.",
+        "금융인증서·우리WON인증서 사용자는 공동인증서 추가 발급 권장사항을 확인한다.",
+        "비밀번호 오류 상태, 전자금융 이체한도와 한도제한 등 계좌 상태를 확인한다.",
+        "은행에 등록된 성명·연락처 등 고객정보를 정비하도록 안내한다.",
+        "국내통신망 여부 및 현지 통신망 상황에 따른 이용 제약을 안내한다."
+      ],
+      "remainingChecks": [
+        "고객이 이용 중인 보안매체·인증서",
+        "공식 화면의 실제 서비스 설정",
+        "미해결 오류·한도제한 여부"
+      ],
+      "restrictions": [
+        "설정이나 보안매체를 챗봇이 자동 변경하지 않는다.",
+        "FAQ의 권장사항을 모두 필수사항으로 바꾸지 않는다.",
+        "출국 준비를 해외 체류 중 제신고와 같은 절차로 안내하지 않는다.",
+        "준비를 마치면 모든 해외 환경에서 이용 가능하다고 보장하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "travelStage"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "PW_RELEASE",
+      "policyCode": "USER_PASSWORD",
+      "title": "비밀번호를 알고 있는 최초 3회 오류",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "USER_LOGIN_PASSWORD"
+          },
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "RELEASE_ERROR"
+          },
+          {
+            "field": "knowsPassword",
+            "op": "EQ",
+            "value": true
+          },
+          {
+            "field": "errorCount",
+            "op": "EQ",
+            "value": 3
+          },
+          {
+            "field": "repeatDuringRelease",
+            "op": "EQ",
+            "value": false
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "PASSWORD",
+        "PASSWORD_DETAIL"
+      ],
+      "officialSteps": [
+        "개인뱅킹 로그인 → 아이디로그인 영역의 비밀번호 재등록 → 이용자비밀번호 3회 오류해제 경로를 안내한다.",
+        "새 제공 FAQ의 인터넷 오류해제는 보안매체·인증서 입력이 필요하다. 기존 FAQ의 조회고객 별도 요건은 적용 대상을 확인하고 구분한다.",
+        "3회 오류 상태에서는 아이디로그인이 제한되지만 인증서 등 다른 로그인 방법이 안내되어 있다.",
+        "필요한 인증은 공식 화면에서 진행한다."
+      ],
+      "remainingChecks": [
+        "이체고객/조회고객 구분과 해당 인증 절차",
+        "공식 인증수단 이용 가능 여부"
+      ],
+      "restrictions": [
+        "비밀번호를 실제로 알려달라고 하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "customerType",
+          "operation",
+          "knowsPassword",
+          "errorCount",
+          "repeatDuringRelease",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "PW_FORGOTTEN_LOCKED",
+      "policyCode": "USER_PASSWORD",
+      "title": "기존 이용자비밀번호를 모르는 3회 오류 상태",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "USER_LOGIN_PASSWORD"
+          },
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "knowsPassword",
+            "op": "EQ",
+            "value": false
+          },
+          {
+            "field": "errorCount",
+            "op": "EQ",
+            "value": 3
+          },
+          {
+            "field": "repeatDuringRelease",
+            "op": "EQ",
+            "value": false
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "PASSWORD_DETAIL",
+        "PASSWORD"
+      ],
+      "officialSteps": [
+        "새 제공 FAQ의 WON뱅킹 오류해제·변경 방법과 휴대폰인증·보안매체·인증서 입력 요건을 안내한다.",
+        "기존 실명확인 센터의 재설정 절차와 같은 절차인지 확인 전에는 인증 요건을 섞지 않는다.",
+        "인증서 등 다른 로그인이 가능하다는 안내를 함께 제공하되 오류해제 완료로 표현하지 않는다."
+      ],
+      "remainingChecks": [
+        "현재 공식 화면에서 선택 가능한 오류해제·변경 절차",
+        "필요 인증수단 이용 가능 여부",
+        "두 FAQ의 적용범위"
+      ],
+      "restrictions": [
+        "비밀번호를 모르는 고객에게 기존 비밀번호 입력 경로를 반복시키지 않는다.",
+        "새 FAQ에 없는 만 19세·내국인 조건을 이 절차에 자동으로 덧붙이지 않는다.",
+        "앱 경로를 확인하기 전 다른 재설정 메뉴를 동일한 절차로 단정하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_SCOPE_UNRESOLVED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "customerType",
+          "knowsPassword",
+          "errorCount",
+          "repeatDuringRelease",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "PW_REPEAT",
+      "policyCode": "USER_PASSWORD",
+      "title": "오류해제 중 다시 3회 오류",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "USER_LOGIN_PASSWORD"
+          },
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "repeatDuringRelease",
+            "op": "EQ",
+            "value": true
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "PASSWORD"
+      ],
+      "officialSteps": [
+        "FAQ의 본인 영업점 방문 비밀번호 제신고 안내를 제공한다.",
+        "비대면 재설정과의 적용 관계가 불명확하면 담당자 확인을 안내한다."
+      ],
+      "remainingChecks": [
+        "재오류 상황에 비대면 재설정이 적용되는지"
+      ],
+      "restrictions": [
+        "실패한 오류해제 과정을 반복 권유하지 않는다.",
+        "전화로 비밀번호를 해제해 준다고 보장하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "customerType",
+          "repeatDuringRelease",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "PW_RESET",
+      "policyCode": "USER_PASSWORD",
+      "title": "비대면 이용자 비밀번호 재설정 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "USER_LOGIN_PASSWORD"
+          },
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "RESET"
+          },
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "age",
+            "op": "BETWEEN",
+            "value": [
+              19,
+              130
+            ]
+          },
+          {
+            "field": "nationality",
+            "op": "EQ",
+            "value": "KR"
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": false
+          },
+          {
+            "field": "repeatDuringRelease",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "PASSWORD"
+      ],
+      "officialSteps": [
+        "WON뱅킹 전체메뉴 → 인증/보안 → 로그인 비밀번호 재설정 경로를 안내한다.",
+        "본인명의 휴대폰·신분증·계좌 인증이 필요한 절차임을 안내한다."
+      ],
+      "remainingChecks": [
+        "본인명의 휴대폰·신분증·계좌 인증 가능 여부"
+      ],
+      "restrictions": [
+        "안내 가능과 실제 인증 통과를 구분한다.",
+        "대상 조건을 모르면 해당 고객에게 재설정 가능하다고 확정하지 않는다.",
+        "휴대폰·보안매체·인증서를 사용하는 새 FAQ의 오류해제 절차와 혼합하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "customerType",
+          "operation",
+          "age",
+          "nationality",
+          "overseas",
+          "repeatDuringRelease"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "PW_OVERSEAS",
+      "policyCode": "USER_PASSWORD",
+      "title": "해외 체류 중 이용자 비밀번호 3회 오류",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "USER_LOGIN_PASSWORD"
+          },
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "errorCount",
+            "op": "EQ",
+            "value": 3
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "OVERSEAS"
+      ],
+      "officialSteps": [
+        "사용자 제공 해외제신고 FAQ는 이 업무를 국내 대리인 경로로 지정하고 있음을 확인한다.",
+        "국내영업점과 사전 상담한다.",
+        "본인이 자필작성·서명한 전자금융이용신청서, 한국 발급 유효 신분증 사본, 위임 관련 서류를 준비하는 절차를 확인한다.",
+        "대리인이 가족관계 확인서류(3개월 이내·번호 표시 조건)와 본인 신분증을 추가해 방문하는 절차를 확인한다.",
+        "위임 관련 서류는 영사확인·아포스티유 확인 공문서·화상공증 중 적용 방식을 상담한다."
+      ],
+      "remainingChecks": [
+        "최신 해외제신고 원문",
+        "국내 담당점",
+        "위임 서류의 구체적 인정 조건"
+      ],
+      "restrictions": [
+        "해외영업점 경로를 이 업무에도 일괄 적용하지 않는다.",
+        "서류 사본·실제 주민등록번호는 상담 채팅으로 수집하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "customerType",
+          "errorCount",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "DOMESTIC_BRANCH",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "SECURITY_SECURITY_CARD_RELEASE",
+      "policyCode": "SECURITY_MEDIA_PASSWORD",
+      "title": "보안카드 오입력 제한 해제",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "SECURITY_CARD"
+          },
+          {
+            "field": "securityMediaLocked",
+            "op": "EQ",
+            "value": true
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "SECURITY_ERROR"
+      ],
+      "officialSteps": [
+        "제공 FAQ의 보안카드 연속 3회·OTP 연속 10회 오입력 초과에 따른 이용 제한을 구분한다.",
+        "인터넷뱅킹에서는 오류해제가 불가함을 안내한다.",
+        "WON뱅킹에서 휴대폰 본인확인·신분증 촬영·안면인식으로 비대면 실명확인 후 오류해제하는 절차를 안내한다."
+      ],
+      "remainingChecks": [
+        "실제로 이용 제한 상태인지",
+        "휴대폰·신분증·안면인식 절차 이용 가능 여부"
+      ],
+      "restrictions": [
+        "이용자비밀번호 재등록 경로를 적용하지 않는다.",
+        "오입력 횟수만으로 실제 잠금 상태를 추정하지 않는다.",
+        "OTP 값·보안카드 번호를 챗에 입력하게 하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "securityMediaLocked",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "SECURITY_OTP_RELEASE",
+      "policyCode": "SECURITY_MEDIA_PASSWORD",
+      "title": "OTP발생기 오입력 제한 해제",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "OTP"
+          },
+          {
+            "field": "securityMediaLocked",
+            "op": "EQ",
+            "value": true
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "SECURITY_ERROR"
+      ],
+      "officialSteps": [
+        "제공 FAQ의 보안카드 연속 3회·OTP 연속 10회 오입력 초과에 따른 이용 제한을 구분한다.",
+        "인터넷뱅킹에서는 오류해제가 불가함을 안내한다.",
+        "WON뱅킹에서 휴대폰 본인확인·신분증 촬영·안면인식으로 비대면 실명확인 후 오류해제하는 절차를 안내한다."
+      ],
+      "remainingChecks": [
+        "실제로 이용 제한 상태인지",
+        "휴대폰·신분증·안면인식 절차 이용 가능 여부"
+      ],
+      "restrictions": [
+        "이용자비밀번호 재등록 경로를 적용하지 않는다.",
+        "오입력 횟수만으로 실제 잠금 상태를 추정하지 않는다.",
+        "OTP 값·보안카드 번호를 챗에 입력하게 하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "securityMediaLocked",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "SECURITY_OVERSEAS",
+      "policyCode": "SECURITY_MEDIA_PASSWORD",
+      "title": "해외 체류 중 보안매체 오류 제신고",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "IN",
+            "value": [
+              "SECURITY_CARD",
+              "OTP"
+            ]
+          },
+          {
+            "field": "securityMediaLocked",
+            "op": "EQ",
+            "value": true
+          },
+          {
+            "field": "overseas",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "OVERSEAS"
+      ],
+      "officialSteps": [
+        "국내 관리점·개설점과 먼저 상담한다.",
+        "본국 파견직원 여부를 확인한 해외영업점 경로와 국내 대리인 경로를 확인한다.",
+        "해외영업점 경로는 한국 발급 유효 신분증·전자금융이용신청서와 국내 송부 절차를 확인한다.",
+        "국내 대리인 경로는 본인이 전자금융이용신청서·한국 발급 유효 신분증 사본·위임 관련 서류를 준비해 우편발송한다.",
+        "대리인은 가족관계 확인서류(3개월 이내·주민등록번호 모두 표시)와 대리인 신분증을 추가해 국내영업점에 방문한다.",
+        "위임 관련 서류는 영사확인 위임장·아포스티유 협약국 확인 공문서(공증문서)·화상공증 중 적용 방식을 확인한다.",
+        "신청서는 본인 자필작성·서명이 필요하다. 홈페이지 전체메뉴 → 기타서비스 → 고객광장 → 서식/약관/자료실 → 전자금융 → 필요서류에서 확인한다."
+      ],
+      "remainingChecks": [
+        "국내 담당점과 해외영업점의 해당 업무 처리 가능 여부",
+        "적용 서류와 시간·비용"
+      ],
+      "restrictions": [
+        "이용자비밀번호 3회 오류만의 국내 대리인 경로 지정 예외를 보안매체 업무에 확대하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "securityMediaLocked",
+          "overseas"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "DOMESTIC_BRANCH",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "EMPLOYEE_REREGISTER",
+      "policyCode": "EMPLOYEE_PASSWORD",
+      "title": "직원ID 비밀번호 분실 또는 오류횟수 존재",
+      "conditions": {
+        "all": [
+          {
+            "field": "credentialType",
+            "op": "EQ",
+            "value": "CORPORATE_EMPLOYEE_PASSWORD"
+          },
+          {
+            "field": "employeePasswordIssue",
+            "op": "IN",
+            "value": [
+              "FORGOTTEN",
+              "ERROR_COUNT_PRESENT"
+            ]
+          }
+        ]
+      },
+      "sourceIds": [
+        "EMPLOYEE_PASSWORD"
+      ],
+      "officialSteps": [
+        "직원ID의 조작자·결재자 비밀번호는 마스터ID가 관리한다는 점을 안내한다.",
+        "기업인터넷뱅킹 → 뱅킹관리 → 직원이용자관리 → 이용자비밀번호재등록 경로를 안내한다.",
+        "우리WON기업 → 전체메뉴 → 관리 → 직원이용자관리 → 직원이용자비밀번호 재등록 경로도 제공한다.",
+        "마스터ID가 재등록하면 기존 오류횟수가 삭제되며 영업점 처리는 불가하다고 안내한다."
+      ],
+      "remainingChecks": [
+        "직원ID인지 마스터ID인지",
+        "마스터ID 관리자의 절차 진행 가능 여부"
+      ],
+      "restrictions": [
+        "개인 WON 실명확인 재설정이나 영업점 방문으로 이 업무를 해결한다고 안내하지 않는다.",
+        "직원에게 마스터ID 인증정보를 공유받으라고 하지 않는다.",
+        "마스터ID 자체 오류는 이 정책으로 확정하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "credentialType",
+          "employeePasswordIssue"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "CONTACT_ONLINE",
+      "policyCode": "CONTACT_CHANGE",
+      "title": "개인 고객정보 전화번호 온라인 변경 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "onlineChangeFailed",
+            "op": "EQ",
+            "value": false
+          }
+        ]
+      },
+      "sourceIds": [
+        "CONTACT_CHANGE"
+      ],
+      "officialSteps": [
+        "개인인터넷뱅킹 로그인 후 상단 로그아웃 옆 정보변경 경로를 안내한다.",
+        "인터넷 변경에는 ARS 등 추가인증·보안매체·인증서 비밀번호 입력이 필요하다고 안내한다.",
+        "WON뱅킹의 내정보 메뉴에서도 변경 가능하다는 안내를 제공한다."
+      ],
+      "remainingChecks": [
+        "공식 화면에서 필요한 인증 가능 여부",
+        "고객별 변경 제한 여부"
+      ],
+      "restrictions": [
+        "전화번호 변경 가능 안내를 본인인증 통과 보장으로 표현하지 않는다.",
+        "연락처를 바꾸면 모든 로그인 오류가 해결된다고 추정하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "customerType",
+          "onlineChangeFailed"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "CONTACT_FAILED",
+      "policyCode": "CONTACT_CHANGE",
+      "title": "온라인 연락처 변경 불가",
+      "conditions": {
+        "all": [
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "INDIVIDUAL"
+          },
+          {
+            "field": "onlineChangeFailed",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "CONTACT_CHANGE"
+      ],
+      "officialSteps": [
+        "신분증을 지참한 우리은행 방문 또는 고객센터 1588/1599/1533-5000 문의 경로를 안내한다."
+      ],
+      "remainingChecks": [
+        "변경 불가 원인",
+        "고객센터 운영 상태·담당 업무"
+      ],
+      "restrictions": [
+        "고객센터가 전화만으로 연락처 변경을 완료한다고 확정하지 않는다.",
+        "실패한 온라인 인증 경로를 반복 권유하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "customerType",
+          "onlineChangeFailed"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_SELF",
+      "policyCode": "MINOR_ELIGIBILITY",
+      "title": "만 14세 이상 미성년자 본인 방문",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              14,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "SELF"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_VISIT"
+      ],
+      "officialSteps": [
+        "자녀 본인이 방문할 수 있는 연령 기준에 해당함을 안내한다.",
+        "입출금계좌에는 금융거래목적 확인 증빙이 필요함을 안내한다."
+      ],
+      "remainingChecks": [
+        "별도 준비서류 정책 결과"
+      ],
+      "restrictions": [
+        "방문 가능 기준을 계좌 개설 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_UNDER14",
+      "policyCode": "MINOR_ELIGIBILITY",
+      "title": "만 14세 미만 자녀의 단독 방문 계획",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              13
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "SELF"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_VISIT"
+      ],
+      "officialSteps": [
+        "단독 방문 개설이 불가하며 법정대리인에 의한 개설이 필요함을 안내한다."
+      ],
+      "remainingChecks": [
+        "변경할 실제 방문자와 법정대리인 여부"
+      ],
+      "restrictions": [
+        "14세 이상 본인 방문 서류를 그대로 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_SELF_DOCS",
+      "policyCode": "MINOR_DOCUMENTS",
+      "title": "만 14세 이상 본인 방문 준비물",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              14,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "SELF"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_DOCS"
+      ],
+      "officialSteps": [
+        "학생증·여권·청소년증 등 FAQ의 본인 확인 서류와 성명·주민등록번호·사진 조건을 안내한다.",
+        "주민등록초본의 성명·생년월일·성별·국적·주소 확인 항목을 안내한다.",
+        "도장 또는 서명, 금융거래목적 확인 증빙을 안내한다.",
+        "FAQ의 서류 발급 3개월 이내·기재사항 조건과 추가서류 가능성을 안내한다."
+      ],
+      "remainingChecks": [
+        "각 준비물 보유 여부와 기재사항",
+        "특정 증빙 인정 여부는 해당 영업점 확인"
+      ],
+      "restrictions": [
+        "가족관계증명서가 초본을 대체한다고 안내하지 않는다.",
+        "보유 진술을 서류 검증 완료로 표시하지 않는다.",
+        "서류 원본·실제 식별번호를 채팅으로 요구하지 않는다."
+      ],
+      "documentRequirements": [
+        {
+          "code": "IDENTITY_DOCUMENT",
+          "label": "청소년증 등 FAQ 기준 본인 확인 서류",
+          "checkFields": [
+            "성명",
+            "주민등록번호",
+            "사진"
+          ],
+          "collectSensitiveValuesInChat": false
+        },
+        {
+          "code": "RESIDENT_ABSTRACT",
+          "label": "주민등록초본",
+          "checkFields": [
+            "성명",
+            "생년월일",
+            "성별",
+            "국적",
+            "주소"
+          ],
+          "collectSensitiveValuesInChat": false
+        },
+        {
+          "code": "SEAL_OR_SIGNATURE",
+          "label": "도장 또는 서명",
+          "checkFields": [],
+          "collectSensitiveValuesInChat": false
+        },
+        {
+          "code": "PURPOSE_EVIDENCE",
+          "label": "금융거래목적 확인 증빙",
+          "checkFields": [
+            "영업점 인정 여부"
+          ],
+          "collectSensitiveValuesInChat": false
+        }
+      ],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_PROXY_DOCS",
+      "policyCode": "MINOR_DOCUMENTS",
+      "title": "법정대리인인 부모가 대신 방문",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "PARENT_PROXY"
+          },
+          {
+            "field": "legalRepresentative",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_DOCS"
+      ],
+      "officialSteps": [
+        "대리인 신분증, 가족관계 확인서류와 도장을 안내한다.",
+        "친권자 확인이 어려우면 자녀 기준 기본증명서 상세가 필요함을 안내한다.",
+        "대리 방문은 서명 거래가 불가하며, 거래목적·주소 확인 및 추가서류 조건을 확인한다."
+      ],
+      "remainingChecks": [
+        "친권자 확인 여부",
+        "서류 발급일·기재사항",
+        "금융거래목적 증빙"
+      ],
+      "restrictions": [
+        "부모가 채팅한다는 이유로 대리 방문을 추정하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType",
+          "legalRepresentative"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CLOSE_SELF",
+      "policyCode": "MINOR_CLOSURE",
+      "title": "자녀 혼자 방문하여 해지",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "SELF"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_CLOSE"
+      ],
+      "officialSteps": [
+        "미성년자 본인의 단독 방문 해지는 불가하며 친권자 확인·전원 동의 절차가 필요하다고 안내한다."
+      ],
+      "remainingChecks": [
+        "실제 방문할 친권자 또는 법정대리인"
+      ],
+      "restrictions": [
+        "14세 이상 본인 가입 기준을 해지에 적용하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CLOSE_PARENT",
+      "policyCode": "MINOR_CLOSURE",
+      "title": "친권자인 부모의 해지 방문",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "PARENT_PROXY"
+          },
+          {
+            "field": "parentalAuthority",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_CLOSE"
+      ],
+      "officialSteps": [
+        "친권자 신분증, 자녀 기준 가족관계증명서·기본증명서(상세/특정 등 친권자 확인), 통장·도장을 안내한다.",
+        "친권자 전원 동의 확인이 필요하다. 공동친권에서 한 명만 방문하면 다른 친권자의 해지 의사를 확인한다.",
+        "서류 발급 3개월 이내·성명·주민등록번호 13자리 확인과 상품별 추가서류 가능성을 안내한다."
+      ],
+      "remainingChecks": [
+        "공동친권 여부·실제 방문자·다른 친권자의 의사 확인 방법"
+      ],
+      "restrictions": [
+        "다른 친권자가 반드시 함께 방문해야 한다거나 동의가 불필요하다고 단정하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType",
+          "parentalAuthority"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CLOSE_LEGAL_REP",
+      "policyCode": "MINOR_CLOSURE",
+      "title": "법정대리인의 해지 방문",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "LEGAL_REPRESENTATIVE"
+          },
+          {
+            "field": "legalRepresentative",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_CLOSE"
+      ],
+      "officialSteps": [
+        "법정대리인 신분증, 자녀 기준 기본증명서 상세/특정 등 대리인 확인서류, 통장·도장을 안내한다.",
+        "발급기간·기재사항·추가서류와 실제 권한 확인 절차를 안내한다."
+      ],
+      "remainingChecks": [
+        "대리권 및 해당 동의 요건의 영업점 확인"
+      ],
+      "restrictions": [
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType",
+          "legalRepresentative"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CLOSE_REMOTE",
+      "policyCode": "MINOR_CLOSURE",
+      "title": "미성년자 비대면 해지 문의",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "executionChannel",
+            "op": "EQ",
+            "value": "REMOTE"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_REMOTE_CLOSE",
+        "MINOR_SUP_CLOSE"
+      ],
+      "officialSteps": [
+        "만 19세 미만 예금은 비대면 해지 불가하며 영업점의 친권자 동의 확인 절차가 필요하다고 안내한다."
+      ],
+      "remainingChecks": [
+        "방문자에 따른 준비물"
+      ],
+      "restrictions": [
+        "개설 1개월·잔액 100만원 조건을 충족해도 미성년자 예외를 무시하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "executionChannel"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_WEB_REGISTER",
+      "policyCode": "MINOR_REGISTRATION",
+      "title": "만 14세 이상 인터넷 조회고객 가입",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              14,
+              18
+            ]
+          },
+          {
+            "field": "registrationChannel",
+            "op": "EQ",
+            "value": "WEB"
+          },
+          {
+            "field": "hasWooriEligibleAccount",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_REGISTER"
+      ],
+      "officialSteps": [
+        "개인인터넷뱅킹 아이디 로그인 영역의 회원가입에서 조회고객 가입 절차를 안내한다.",
+        "이체·인증서 발급이 필요하면 WON 또는 영업점 가입 절차를 별도로 확인하도록 안내한다."
+      ],
+      "remainingChecks": [
+        "조회만 필요한지 금융거래도 필요한지"
+      ],
+      "restrictions": [
+        "조회고객 가입으로 이체까지 가능하다고 안내하지 않는다.",
+        "만 16세 고객에게 WON 가입이 가능하다고 연결하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "registrationChannel",
+          "hasWooriEligibleAccount"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_WEB_UNDER14",
+      "policyCode": "MINOR_REGISTRATION",
+      "title": "만 14세 미만 인터넷 가입 기준 미충족",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              13
+            ]
+          },
+          {
+            "field": "registrationChannel",
+            "op": "EQ",
+            "value": "WEB"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_REGISTER"
+      ],
+      "officialSteps": [
+        "제공 FAQ의 인터넷 회원가입 연령 기준에 해당하지 않음을 안내하고 미성년자 영업점 가입 준비사항을 확인하도록 안내한다."
+      ],
+      "remainingChecks": [],
+      "restrictions": [
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "registrationChannel"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_WON_UNDER17",
+      "policyCode": "MINOR_REGISTRATION",
+      "title": "만 17세 미만 WON 가입 기준 미충족",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              16
+            ]
+          },
+          {
+            "field": "registrationChannel",
+            "op": "EQ",
+            "value": "WON"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_REGISTER"
+      ],
+      "officialSteps": [
+        "제공 FAQ의 WON 회원가입 기준은 만 17세 이상임을 안내한다."
+      ],
+      "remainingChecks": [
+        "필요한 서비스와 영업점 가입 절차"
+      ],
+      "restrictions": [
+        "14세 이상 방문 계좌 개설 기준과 혼동하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "registrationChannel"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_WON_REGISTER",
+      "policyCode": "MINOR_REGISTRATION",
+      "title": "만 17~18세 WON 회원가입 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              17,
+              18
+            ]
+          },
+          {
+            "field": "registrationChannel",
+            "op": "EQ",
+            "value": "WON"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_REGISTER"
+      ],
+      "officialSteps": [
+        "WON 첫 화면 시작하기와 휴대폰 본인확인·신분증 촬영·안면인식 등 비대면 실명확인 절차를 안내한다.",
+        "인증서 발급·계좌 개설 등 가입 절차는 고객 상황에 따라 다를 수 있으며 비대면 불가 시 방문 준비사항을 확인한다."
+      ],
+      "remainingChecks": [
+        "인증수단과 고객별 진행 가능 여부"
+      ],
+      "restrictions": [
+        "나이만으로 가입·계좌 개설 완료를 보장하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "registrationChannel"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_REMOTE_OPEN_GUIDE",
+      "policyCode": "MINOR_REMOTE_OPEN",
+      "title": "WON 개설의 인증수단 요건",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_REMOTE_OPEN",
+        "MINOR_SUP_REGISTER"
+      ],
+      "officialSteps": [
+        "본인명의 휴대폰과 비대면 실명인증이 가능한 주민등록증·운전면허증이 필요하다는 제공 FAQ를 안내한다.",
+        "신규 WON 회원가입이 필요한 경우에는 별도 회원가입 연령 기준도 확인한다."
+      ],
+      "remainingChecks": [
+        "본인명의 휴대폰·해당 신분증 보유",
+        "신규 회원가입이 필요한지",
+        "현재 공식 앱의 고객별 개설 조건"
+      ],
+      "restrictions": [
+        "방문용 청소년증·학생증이 비대면에서도 허용된다고 확대하지 않는다.",
+        "회원가입 연령만으로 계좌 개설 가능 여부를 확정하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CASH_SELF",
+      "policyCode": "MINOR_CASH_CARD",
+      "title": "만 14세 이상 본인 현금카드 발급",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              14,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "SELF"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_CASH_CARD"
+      ],
+      "officialSteps": [
+        "영업점 방문과 주민등록증 원칙을 안내한다. 학생증·여권·청소년증은 주민등록등·초본을 함께 준비하여 성명·주민등록번호·사진·실제주소를 확인한다.",
+        "통장과 도장 또는 서명, 서류 발급 3개월 이내·기재사항 조건을 안내한다."
+      ],
+      "remainingChecks": [
+        "실제 신분증 종류·추가 주소 확인"
+      ],
+      "restrictions": [
+        "현금카드(금융IC) 발급 기준을 신용카드·체크카드 기준으로 확대하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CASH_UNDER14",
+      "policyCode": "MINOR_CASH_CARD",
+      "title": "만 14세 미만 본인 현금카드 발급 문의",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              13
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "SELF"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_CASH_CARD"
+      ],
+      "officialSteps": [
+        "만 14세 미만 본인 발급은 불가하며 친권자 대리 발급 절차를 확인하도록 안내한다."
+      ],
+      "remainingChecks": [],
+      "restrictions": [
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CASH_PARENT",
+      "policyCode": "MINOR_CASH_CARD",
+      "title": "친권자인 부모의 현금카드 대리 발급",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "PARENT_PROXY"
+          },
+          {
+            "field": "parentalAuthority",
+            "op": "EQ",
+            "value": true
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_CASH_CARD"
+      ],
+      "officialSteps": [
+        "대리인 신분증, 부모·자녀 관계가 표시된 등본 또는 자녀 기준 가족관계증명서, 자녀 기준 기본증명서 상세/특정, 통장·도장을 안내한다.",
+        "추가 주소 확인 서류와 발급기간·기재사항 조건을 확인한다."
+      ],
+      "remainingChecks": [
+        "친권자 확인·실제 준비서류"
+      ],
+      "restrictions": [
+        "예금 개설의 조부모 대리 기준을 현금카드에도 적용하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType",
+          "parentalAuthority"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_PARENT_SIGNATURE",
+      "policyCode": "MINOR_PROXY_SIGNATURE",
+      "title": "부모 서명·부모 명의 도장 문의",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "visitorType",
+            "op": "EQ",
+            "value": "PARENT_PROXY"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_PROXY_SEAL",
+        "MINOR_SUP_OPEN_DOCS"
+      ],
+      "officialSteps": [
+        "부모가 대리 개설하는 경우에도 서명거래는 불가하다고 안내한다.",
+        "제공 FAQ는 부모 명의 도장으로도 개설 가능하다고 안내한다. 다른 개설·대리권·준비서류 조건은 별도로 확인한다."
+      ],
+      "remainingChecks": [
+        "해당 대리 개설 요건"
+      ],
+      "restrictions": [
+        "자녀 본인 방문에서 서명 가능하다는 안내를 대리 방문에 적용하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "visitorType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_PHONE_PRODUCT",
+      "policyCode": "MINOR_PHONE_DEPOSIT",
+      "title": "미성년자의 전화 예적금 가입 문의",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_PHONE_DEPOSIT"
+      ],
+      "officialSteps": [
+        "제공 FAQ에 미성년자 등 일부 고객의 서비스 이용 제한이 명시되어 있어 가입 가능 여부를 확정하지 않는다.",
+        "상품가입 전화 서비스와 일반 전화상담을 구분한다. 필요한 경우 공식 상담 경로에서 대상 여부를 확인한다."
+      ],
+      "remainingChecks": [
+        "현재 서비스의 정확한 대상 제한"
+      ],
+      "restrictions": [
+        "미성년자라는 이유로 일반 전화상담도 불가능하다고 판단하지 않는다.",
+        "신청 접수 24시간을 상담직원 24시간 운영으로 해석하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "MINOR_CHILD_HOUSING_TAX",
+      "policyCode": "MINOR_HOUSING_TAX",
+      "title": "부모의 자녀 명의 청약 소득공제 문의",
+      "conditions": {
+        "all": [
+          {
+            "field": "childAge",
+            "op": "BETWEEN",
+            "value": [
+              0,
+              18
+            ]
+          },
+          {
+            "field": "accountOwner",
+            "op": "EQ",
+            "value": "CHILD"
+          },
+          {
+            "field": "deductionClaimant",
+            "op": "EQ",
+            "value": "PARENT"
+          }
+        ]
+      },
+      "sourceIds": [
+        "MINOR_SUP_HOUSING_TAX"
+      ],
+      "officialSteps": [
+        "제공 FAQ는 근로자 본인 명의 가입분만 공제 가능하다고 안내하므로 자녀 명의라는 점을 구분한다."
+      ],
+      "remainingChecks": [
+        "해당 과세연도와 구체적 세무 요건은 별도 자료·상담 필요"
+      ],
+      "restrictions": [
+        "부모가 납입했다는 이유로 본인 명의 요건을 충족한다고 보지 않는다.",
+        "이 FAQ만으로 공제액·최종 세금·다른 공제 요건 충족을 계산하거나 보장하지 않는다.",
+        "상담 챗으로 실제 주민등록번호·인증정보·신분증 원본을 수집하지 않는다.",
+        "절차 안내를 실제 업무 완료나 승인으로 표현하지 않는다."
+      ],
+      "documentRequirements": [],
+      "evidenceStatus": "SOURCE_PENDING",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "childAge",
+          "accountOwner",
+          "deductionClaimant"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 특정 채널 추천·처리 가능·실시간 가용성을 뜻하지 않음.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "PENSION_FUND_AUTO_GUIDE",
+      "policyCode": "PENSION_FUND_AUTO",
+      "title": "연금저축펀드 자동이체 등록",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferProduct",
+            "op": "EQ",
+            "value": "PENSION_SAVINGS_FUND"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "REGISTER"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_PENSION_FUND_AUTO"
+      ],
+      "officialSteps": [
+        "WON뱅킹 또는 인터넷뱅킹 자동이체등록 메뉴에서 등록할 수 있다.",
+        "입금계좌는 운용 중인 자계좌로 지정한다. 출금계좌는 입출금계좌 또는 동일 모계좌의 연금MMF로 지정한다.",
+        "자동이체 등록금액의 연간 합계는 납입한도를 초과할 수 없다."
+      ],
+      "remainingChecks": [
+        "출금계좌 종류 및 동일 모계좌 여부",
+        "운용 중인 자계좌 여부",
+        "등록금액 연간 합계와 남은 납입한도"
+      ],
+      "restrictions": [
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [
+        {
+          "surface": "WON_APP_OR_INTERNET_BANKING",
+          "menu": "자동이체등록",
+          "purpose": "REGISTER",
+          "requiresCustomerExecution": true
+        }
+      ],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferProduct",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "SAVINGS_AUTO_SKIP_GUIDE",
+      "policyCode": "SAVINGS_AUTO_SKIP",
+      "title": "적금 자동이체 한 회차 건너뛰기",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferProduct",
+            "op": "EQ",
+            "value": "INSTALLMENT_SAVINGS"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "SKIP_ONE_INSTALLMENT"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_SAVINGS_AUTO_SKIP"
+      ],
+      "officialSteps": [
+        "적금 자동이체는 한 회차 납입만 일시중지할 수 없다.",
+        "기존 자동이체 해지 후 향후 납입일자에 시작하도록 재등록하는 방법이 있다.",
+        "해당 월 납입을 막으려면 이체지정일 전 영업일까지 해지해야 한다.",
+        "정기적립식 상품을 재등록하면 미납회차를 확인하여 등록일 다음 영업일에 미납회차가 일괄 출금된다."
+      ],
+      "remainingChecks": [
+        "정기적립식 여부",
+        "이체지정일과 현재 시각·영업일",
+        "미납회차와 재등록 시 출금 영향"
+      ],
+      "restrictions": [
+        "재등록하면 이번 회차 출금이 반드시 방지된다고 안내하지 않는다.",
+        "이 FAQ를 일반 생활비 자동이체 날짜 변경 절차로 사용하지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferProduct",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "FUND_AUTO_MISSED_GUIDE",
+      "policyCode": "FUND_AUTO_MISSED",
+      "title": "적립식 펀드 자동이체 미출금",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferProduct",
+            "op": "EQ",
+            "value": "INSTALLMENT_FUND"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "CHECK_NOT_PROCESSED"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_FUND_AUTO_MISSED"
+      ],
+      "officialSteps": [
+        "펀드는 예약거래로 자동이체일에 출금계좌 잔액이 부족하면 자동이체되지 않는다.",
+        "자동이체일 오전 11시 전까지 잔액이 있어야 출금된다.",
+        "현금화되지 않은 수표·어음은 출금할 수 없다."
+      ],
+      "remainingChecks": [
+        "고객이 말한 잔액 확보 시점",
+        "현금화된 출금가능금액",
+        "실제 거래 결과와 다른 실패 사유"
+      ],
+      "restrictions": [
+        "미출금이라는 진술만으로 잔액 부족을 확정하지 않는다.",
+        "오전 11시 이후 재출금 여부는 이 FAQ만으로 확정하지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferProduct",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "SOLE_PROPRIETOR_TRANSFER_FEE_GUIDE",
+      "policyCode": "SOLE_PROPRIETOR_TRANSFER_FEE",
+      "title": "개인사업자 타행 이체수수료 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "customerType",
+            "op": "EQ",
+            "value": "SOLE_PROPRIETOR"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "CHECK_TRANSFER_FEE"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_SOLE_PROPRIETOR_TRANSFER_FEE"
+      ],
+      "officialSteps": [
+        "개인사업자의 타행 이체수수료는 횟수 제한 없이 전액 면제된다고 안내한다. FAQ에 기재된 시행일은 2023-02-08이다.",
+        "안내된 면제 범위는 인터넷뱅킹·스마트뱅킹 이체수수료 및 타행 자동이체 수수료다."
+      ],
+      "remainingChecks": [
+        "실제 이용 서비스와 수수료 종류",
+        "고객 구분",
+        "이미 발생한 수수료의 개별 부과 내역"
+      ],
+      "restrictions": [
+        "다른 수수료 면제·환급까지 보장하지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "customerType",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "HOUSING_AUTO_TAX_LIMIT_GUIDE",
+      "policyCode": "HOUSING_AUTO_TAX_LIMIT",
+      "title": "청약 세금우대한도 초과 자동이체 미처리",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferProduct",
+            "op": "EQ",
+            "value": "HOUSING_SUBSCRIPTION"
+          },
+          {
+            "field": "failureNoticeType",
+            "op": "EQ",
+            "value": "TAX_PREFERENCE_LIMIT_EXCEEDED"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_HOUSING_AUTO_TAX_LIMIT"
+      ],
+      "officialSteps": [
+        "해당 문구는 청약 가입 시 설정한 세금우대(비과세)한도까지 입금되어 추가 입금과 본부 일괄 자동이체가 처리되지 않았다는 안내다.",
+        "FAQ는 세금우대 제도가 2015년부터 폐지되어 세금우대한도 증액이 불가하다고 안내한다.",
+        "기존 혜택을 유지하려면 추가 입금 없이 계좌를 유지한 후 해지하는 방법이 있다. 매월 미처리 문자를 중단하려면 자동이체만 해지한다.",
+        "추가 입금을 원하면 일반과세로 전환해야 한다. 영업점 방문 시 본인 신분증을 준비한다.",
+        "인터넷뱅킹: 로그인 → 전계좌 조회 → 거래내역조회 → 주택청약종합저축 → 일반과세 전환.",
+        "WON뱅킹: 로그인 → 전체메뉴 → 계좌조회/관리 → 청약계좌 → 계좌관리 일반과세 전환. 원문의 계조관리 표기는 오탈자로 보고 계좌관리로 표기했으며 실제 메뉴는 확인한다.",
+        "전환일부터 발생한 이자는 일반세율이 적용되고, 한도 초과로 미처리된 자동이체 금액이 일괄 출금된다.",
+        "일괄출금을 원하지 않으면 기존 자동이체 해지 후 다시 신청하는 방법을 확인한다."
+      ],
+      "remainingChecks": [
+        "고객이 실제 받은 문구",
+        "혜택 유지·추가 납입·문자 중단 중 고객 목적",
+        "미처리 금액 및 전환 시 출금 영향"
+      ],
+      "restrictions": [
+        "세금우대 전환을 고객 동의 없이 실행하거나 세무상 유불리를 확정하지 않는다.",
+        "계좌 해지와 자동이체 해지를 구분한다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferProduct",
+          "failureNoticeType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "DEMAND_ACCOUNT_CLOSURE_GUIDE",
+      "policyCode": "DEMAND_ACCOUNT_CLOSURE",
+      "title": "입출금계좌 비대면 해지와 연결 서비스 제한",
+      "conditions": {
+        "all": [
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "CLOSE_ACCOUNT"
+          },
+          {
+            "field": "accountType",
+            "op": "EQ",
+            "value": "DEMAND_DEPOSIT"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_DEMAND_ACCOUNT_CLOSURE"
+      ],
+      "officialSteps": [
+        "개인·개인사업자의 개설 1개월 이상, 잔액 100만원 이하 입출식 계좌(MMDA 포함)는 비대면 해지 기준에 해당한다.",
+        "AMA 등 일부 상품은 우리닷컴통장으로 종류를 전환한 후 해지해야 한다.",
+        "사이버증권 연결·자동이체 등록·수수료 결제·예적금 연결계좌 등 비대면 해지 불가 경우는 영업점 해지 대상이다.",
+        "만 19세 미만 예금은 비대면 해지 불가하며 영업점에서 친권자 전원 동의를 확인한다."
+      ],
+      "remainingChecks": [
+        "예금주 나이·고객 구분",
+        "계좌 개설 경과기간과 잔액",
+        "상품명·연결 서비스·계좌 제한"
+      ],
+      "restrictions": [
+        "자동이체만 해지하면 계좌도 즉시 비대면 해지된다고 확정하지 않는다.",
+        "기본 금액·기간 조건만으로 최종 해지 가능을 확정하지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "operation",
+          "accountType"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "INTERBANK_AUTO_GUIDE",
+      "policyCode": "INTERBANK_AUTO",
+      "title": "타행 자동이체 등록·미처리·관리 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferType",
+            "op": "EQ",
+            "value": "INTERBANK"
+          },
+          {
+            "field": "operation",
+            "op": "IN",
+            "value": [
+              "REGISTER",
+              "CHECK_NOT_PROCESSED",
+              "CHANGE",
+              "CHANGE_DATE",
+              "CANCEL",
+              "LOOKUP"
+            ]
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_INTERBANK_AUTO"
+      ],
+      "officialSteps": [
+        "타행 자동이체는 지정일에 우리은행 계좌에서 출금하여 당일 수취은행 지정계좌로 입금한다.",
+        "출금일에 잔액 부족 등으로 미처리되면 이후 잔액을 채워도 추가 출금하지 않는다.",
+        "현금화 전 타행수표 자금도 출금되지 않는다.",
+        "등록 경로: 영업점 본인 신분증 지참, 인터넷뱅킹 자동이체 메뉴, WON뱅킹 원화 자동이체 등록, 텔레뱅킹 ARS 533.",
+        "인터넷뱅킹: 로그인 → 이체 → 자동이체 → 자동이체 조회/등록/변경/해지.",
+        "WON뱅킹: 로그인 → 전체메뉴 → 이체/출금 → 자동이체 등록/관리 → 자동이체등록하기 → 원화 자동이체 등록.",
+        "텔레뱅킹: 1588/1599/1533-5000 → ARS 533 계좌 및 은행간 자동이체 등록."
+      ],
+      "remainingChecks": [
+        "타행 자동이체가 맞는지",
+        "변경·해지라면 실제 등록된 자동이체인지",
+        "실패 시 실제 출금 결과",
+        "날짜 변경 가능 항목·적용 회차·마감 조건은 공식 거래 화면에서 추가 확인"
+      ],
+      "restrictions": [
+        "인터넷 변경 메뉴의 존재만으로 날짜 변경 승인·적용일·완료를 확정하지 않는다.",
+        "ARS 등록 기능을 상담원의 모든 변경·해지 업무 가능 근거로 사용하지 않는다.",
+        "당행 계좌간·적금·펀드·IRP에 재출금 규칙을 일반화하지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [
+        {
+          "surface": "INTERNET_BANKING",
+          "menu": "이체 → 자동이체 → 자동이체 조회/등록/변경/해지",
+          "purpose": "MANAGEMENT_MENU",
+          "requiresCustomerExecution": true
+        },
+        {
+          "surface": "WON_APP",
+          "menu": "전체메뉴 → 이체/출금 → 자동이체 등록/관리 → 자동이체등록하기 → 원화 자동이체 등록",
+          "purpose": "REGISTER",
+          "requiresCustomerExecution": true
+        },
+        {
+          "surface": "TELEBANKING_ARS",
+          "menu": "1588/1599/1533-5000 → 533",
+          "purpose": "REGISTER",
+          "requiresCustomerExecution": true
+        }
+      ],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferType",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "RENT_PAYMENT_STATEMENT_GUIDE",
+      "policyCode": "RENT_PAYMENT_STATEMENT",
+      "title": "월세납입내역서 발급",
+      "conditions": {
+        "all": [
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "ISSUE_RENT_STATEMENT"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_RENT_PAYMENT_STATEMENT"
+      ],
+      "officialSteps": [
+        "우리은행에서 자동이체 또는 계좌이체 시 월세로 선택하여 이체한 거래는 월세납입내역서 발급 대상이다.",
+        "본인 신분증을 지참한 영업점 방문 또는 인터넷뱅킹에서 발급한다.",
+        "개인인터넷뱅킹 로그인 → 뱅킹관리 → 증명서발급 → 월세납입내역서 → 조회 → 증명서 인쇄."
+      ],
+      "remainingChecks": [
+        "이체 시 월세로 선택했는지",
+        "해당 거래 존재 여부·발급 가능 기간"
+      ],
+      "restrictions": [
+        "고객이 월세 용도라고 말한 것과 이체 시 월세를 선택한 것은 구분한다.",
+        "일반 이체확인증과 동일 문서로 취급하지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "IRP_AUTO_LIMIT_GUIDE",
+      "policyCode": "IRP_AUTO_LIMIT",
+      "title": "IRP 납입한도 초과와 미출금 자동이체",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferProduct",
+            "op": "EQ",
+            "value": "IRP"
+          },
+          {
+            "field": "operation",
+            "op": "IN",
+            "value": [
+              "CHECK_LIMIT",
+              "INCREASE_LIMIT",
+              "CHECK_NOT_PROCESSED"
+            ]
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_IRP_AUTO_LIMIT"
+      ],
+      "officialSteps": [
+        "FAQ는 연금저축을 포함한 전 금융기관 연 1800만원 범위와 사전 신청한 연간입금 한도를 안내한다.",
+        "시도 금액과 올해 입금액 합계가 신청한 한도를 넘은 경우, 잔여 한도 내에서 인터넷뱅킹·WON뱅킹으로 한도를 조정할 수 있다.",
+        "잔여 배정 한도가 없으면 타 상품의 배정 한도를 축소한 뒤 증액하는 경로를 안내한다.",
+        "우리은행 입출금통장에서 IRP로 등록한 자동이체의 직전 1회 미출금액은 연간한도 증액 시 인출된다. 원치 않으면 먼저 자동이체를 해지한 후 증액한다.",
+        "인터넷 한도: 개인 로그인 → 예금/신탁 → 연금신탁관리 → 납입한도 등록/변경 → 개인IRP/연금저축 조회 후 변경.",
+        "인터넷 자동이체 해지: 이체 → 자동이체 → 자동이체조회/등록/변경 → 출금계좌 조회 → 개인형IRP 자동이체 선택 후 해지.",
+        "WON 한도: 상품 → 퇴직연금 → MY 퇴직연금관리 → 퇴직연금서비스 전체보기 → 계좌관리하기 → 연금저축한도관리.",
+        "WON 자동이체 해지: 상품 → 퇴직연금 → MY 퇴직연금관리 → 자동이체 관리."
+      ],
+      "remainingChecks": [
+        "실제 오류 문구·상품",
+        "납입액과 상품별 배정·잔여 한도",
+        "직전 1회 미출금액 여부",
+        "고객의 추가 출금 의사"
+      ],
+      "restrictions": [
+        "IRP 출금 규칙을 타행 자동이체에 적용하지 않는다.",
+        "FAQ 범위 밖 특례·세액공제·실제 잔여 한도를 추정하지 않는다.",
+        "증액 전 추가 출금 영향을 빠뜨리지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferProduct",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "TEENTEN_AUTO_RESTRICTION_GUIDE",
+      "policyCode": "TEENTEN_AUTO_RESTRICTION",
+      "title": "우리틴틴 자동이체 계좌 등록 제한",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferProduct",
+            "op": "EQ",
+            "value": "WOORI_TEENTEN"
+          },
+          {
+            "field": "operation",
+            "op": "EQ",
+            "value": "REGISTER"
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_FAQ_TEENTEN_AUTO_RESTRICTION"
+      ],
+      "officialSteps": [
+        "우리틴틴은 선불전자지급수단으로 휴대폰요금·렌탈요금 등의 자동이체·자동납부 계좌로 등록할 수 없다."
+      ],
+      "remainingChecks": [
+        "고객이 사용하는 상품이 우리틴틴인지"
+      ],
+      "restrictions": [
+        "이 제한을 미성년자의 모든 일반 은행계좌로 확대하지 않는다.",
+        "FAQ의 일반 기준을 해당 고객의 실제 처리 결과·승인·거래 완료로 확정하지 않는다.",
+        "다른 자동이체 유형에 이 절차를 확대 적용하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferProduct",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    }
+  ],
+  "projectRules": [
+    {
+      "code": "SEPARATE_FACTS_AND_RECOMMENDATION",
+      "ruleOrigin": "PROJECT_RULE",
+      "action": "FAQ는 적용 조건·업무 절차·제한을 제공하고 상담 채널 결과는 매 요청의 고객 상황과 운영정보로 계산한다."
+    },
+    {
+      "code": "NO_UNSUPPORTED_ANSWER",
+      "ruleOrigin": "PROJECT_RULE",
+      "action": "정책 미지원은 고정 문구 반환. 정보 부족·자료 충돌·시스템 장애와 구분한다."
+    },
+    {
+      "code": "NO_FAKE_EXECUTION",
+      "ruleOrigin": "PROJECT_RULE",
+      "action": "상담 안내·공식 경로 제공을 실제 거래 처리나 연결 완료로 표현하지 않는다."
+    },
+    {
+      "code": "INCIDENT_CONTEXT",
+      "ruleOrigin": "PROJECT_RULE",
+      "action": "사고 가능성이 있는 현재 상황이면 공식 긴급 대응 안내를 먼저 제공한다. 임의로 전화만 남기거나 이메일 회신 대기를 유일 대응으로 삼지 않는다."
+    },
+    {
+      "code": "USER_CONTEXT",
+      "ruleOrigin": "PROJECT_RULE",
+      "action": "실제 방문자·상품·업무·시도 결과를 사용하고 문의자 관계·과거 전화 의향만으로 분기·채널을 확정하지 않는다."
+    }
+  ],
+  "globalRestrictions": [
+    "기존 사용자 제공 FAQ의 절차·제한을 보존한다. 상담 채널 추천은 공식 업무 수행 채널과 별도다.",
+    "모든 정책에서 고정 candidateChannels·supportMode·채널별 점수·순위를 제거했다.",
+    "상품별 자동이체 마감·미납·재출금 규칙을 다른 상품에 적용하지 않는다.",
+    "FAQ 안내로 실제 고객의 증빙 인정·개설 승인·출금 원인·거래 완료를 확정하지 않는다.",
+    "상담 채팅에 실제 비밀번호·OTP·주민등록번호·신분증 원본을 요구하지 않는다.",
+    "개발용 DRAFT 및 미검증 출처의 기존 상태는 유지하며 운영 승인으로 승격하지 않는다."
+  ],
+  "updatedOn": "2026-10-27",
+  "schemaNotes": [
+    "기존 FAQ 기반 절차·제한·출처는 보존한다. projectRouting의 고정 채널·supportMode는 제거한다.",
+    "consultationAssessment는 실행 시 확인할 입력 명세이며 추천 결과가 아니다.",
+    "FAQ의 앱/웹/ARS/영업점 업무 수행 경로와 CHAT/PHONE/EMAIL 상담 채널을 구분한다.",
+    "모든 조건은 서버에서 확인한다. LLM이 SQL·점수·가용성·인증 완료 상태를 임의 생성하지 않는다.",
+    "v3 JSON 로더/DB 스키마 및 공용 DTO와 자동 호환되는 파일이 아니다. Java 연동은 별도 구현한다.",
+    "WEB_CHECKED는 공개 페이지 대조이며 은행의 운영 승인 또는 정책 시행일 확정이 아니다."
+  ],
+  "customerContextContract": {
+    "fields": {
+      "requestGoal": "일반 방법 안내 / 개별 거래 확인 / 실제 실행 요청 / 불만 해결 등. 업무명과 구분.",
+      "attemptedSteps": "고객이 이미 해 본 단계와 실패 위치. 미언급은 UNKNOWN.",
+      "observedError": "고객이 진술한 오류 문구. 실제 오류 원인 확정과 구분.",
+      "needsAccountSpecificCheck": "개별 내역·서류 인정·승인 판단이 필요한지와 근거.",
+      "timeConstraint": "희망 처리 시점과 지연 시 영향. 짜증이나 길이만으로 긴급 판정하지 않음.",
+      "incidentSignals": "분실·미인지 거래 등 고객 진술과 출처. 사고 확정으로 취급하지 않음.",
+      "appWebUsability": "접속·본인인증·메뉴 이용 가능 여부. 일반 안내에 인증을 강제하지 않음.",
+      "interactionNeeds": "실시간 문답 필요 여부, 비동기 회신 수용 가능 여부와 이유.",
+      "explicitChannelPreference": "명시한 현재 선호만 반영. 전화하려던 중이라는 배경은 전화 요청 확정 아님."
+    },
+    "factRepresentation": {
+      "value": "실제 값 또는 null",
+      "origin": "USER_STATEMENT | SERVER_VERIFIED | MODEL_INFERENCE",
+      "evidence": "근거가 되는 메시지 일부 또는 검증 결과 식별자"
+    },
+    "rules": [
+      "미언급을 false·0·없음으로 바꾸지 않는다.",
+      "MODEL_INFERENCE는 확인 사실과 분리한다.",
+      "인증 완료·실제 잔액·채널 운영 상태는 사용자 문장이나 LLM 추정으로 서버 검증 상태가 되지 않는다.",
+      "질문은 답변·적용 조건을 실제로 바꾸는 누락 정보만 묶어서 한다."
+    ]
+  },
+  "policyLookupContract": {
+    "matchScope": "먼저 의도·업무 관련 정책을 찾고 그 안에서 상황 조건을 검증한다. 전역 조건만으로 다른 업무 정책을 매칭하지 않는다.",
+    "conditionSemantics": {
+      "TRUE": "알려진 사실이 조건에 일치",
+      "FALSE": "알려진 사실이 조건과 불일치",
+      "UNKNOWN": "필요 사실이 없거나 확인되지 않음"
+    },
+    "combination": "all 조건 중 FALSE가 있으면 해당 분기 제외; FALSE 없이 UNKNOWN이면 후보로 보존하고 필요한 정보 표시; 모두 TRUE면 적용 분기. 첫 일치 1건으로 자르지 않고 관련 분기를 함께 반환한다.",
+    "resultStatuses": {
+      "MATCHED": "적용 분기·출처·제한·남은 확인사항 반환",
+      "NEEDS_INFORMATION": "관련 정책은 있지만 적용 조건 미확인. 미지원으로 오인하지 않음.",
+      "UNSUPPORTED": "해당 업무 또는 확인된 상황을 다루는 정책이 없음. 채널 순위 계산 생략.",
+      "SOURCE_CONFLICT": "필요 근거 충돌. 해당 주장 확정·실행 안내 보류.",
+      "ERROR": "조회 장애. 정책 미지원과 구분."
+    },
+    "unsupportedMessage": "지금은 지원하지 않는 기능입니다",
+    "periodHandling": "알려진 적용 시작·종료일은 검증하며 날짜 미상은 무기한 승인으로 취급하지 않는다. DRAFT는 개발 환경용.",
+    "referenceIntegrity": "채널추천도구는 LLM이 수정한 정책 본문을 신뢰하지 않고 서버 정책 식별자·버전 또는 서버 저장 조회결과로 재검증한다."
+  },
+  "channelEvaluationContract": {
+    "mode": "RUNTIME_CONTEXT_EVALUATION",
+    "channelUniverse": [
+      "CHAT",
+      "PHONE",
+      "EMAIL"
+    ],
+    "universeMeaning": "비교 가능한 종류의 목록이며 업무별 지원·추천·순위 선언이 아니다.",
+    "inputs": [
+      "serverPolicyResult",
+      "customerContext",
+      "verifiedChannelCapabilities",
+      "currentChannelAvailability",
+      "evaluationTime",
+      "scoringRuleVersion"
+    ],
+    "eligibilityChecks": [
+      "현재 요청이 일반 설명·개별 확인·실제 실행 중 무엇인지 구분한다.",
+      "FAQ의 처리 제한·담당 기관·고객 조건과 채널별 검증된 지원 범위를 대조한다.",
+      "고객의 이용·인증 가능 여부, 이미 시도한 단계, 상담 긴급성·응답 방식 요구를 반영한다.",
+      "안내를 할 수 있다는 이유로 실제 업무 실행도 가능하다고 표시하지 않는다.",
+      "채널 지원 근거 또는 가용성이 미확인이면 UNKNOWN으로 표시하고 처리 가능 채널로 확정하지 않는다."
+    ],
+    "runtimeCriteria": [
+      "현재 상담 목적 해결 범위",
+      "고객의 실제 이용 가능성과 실패 단계",
+      "필요한 본인확인 방식의 적합성",
+      "현재 운영·응답 시점과 고객의 시간 제약",
+      "실시간 문답 또는 비동기 회신의 적합성",
+      "고객이 명시한 선호와 필요한 추가 노력"
+    ],
+    "scoring": "ChannelRankingService의 별도 버전 관리된 공통 평가식으로 계산한다. 정책 JSON에는 채널별 고정 점수·가중치·추천 순위를 저장하지 않는다.",
+    "unknownHandling": "대기시간·가용성 미확인을 즉시 이용·0분으로 치환하거나 임의 점수로 채우지 않는다.",
+    "ranking": "ELIGIBLE인 채널만 순위화. 같은 점수는 공동 순위 가능. CHAT 고정 동점 우선 규칙 없음. 출력 최대 3개, 실제 가능 채널이 0~2개면 그대로 반환.",
+    "outputEvidence": [
+      "판단 목적",
+      "적용 정책·분기 ID",
+      "고객 상황 근거",
+      "처리 가능 여부 및 제외·미확인 사유",
+      "점수 항목별 이유",
+      "계산 시점·평가식 버전"
+    ],
+    "emailNote": "이메일을 일괄 제외하거나 추가하지 않는다. 해당 문의의 접수 범위·본인확인·회신 소요 등 공식 채널 근거를 별도로 확보한 경우에만 판단한다.",
+    "implementationStatus": "DATA_CONTRACT_ONLY_JAVA_INTEGRATION_REQUIRED"
+  },
+  "contractNotes": [
+    "A의 공용 DTO는 변경하지 않음. 현재 PolicySearchCondition에는 나이·방문자 등 분기 인자가 없음.",
+    "requiresIdentityVerification은 절차의 필요 여부이지 고객 인증 완료 여부가 아님. 일반 FAQ 안내에는 인증이 필요 없을 수 있음.",
+    "PolicyResult의 verifiedContent에는 분기·준비사항을 담을 수 있으나 출처/미확인 조건/검증 상태가 별도 필드로 없어 계약 합의가 필요함.",
+    "A는 정책 결과 목록을 받을 수 있어야 함. 한 FAQ만 선택하면 방문 기준과 준비서류를 함께 안내할 수 없음.",
+    "기존 DB는 문자열 policy_code를 PK로 사용하므로 A의 Long policyId와 식별자 매핑 또는 DB 설계 합의가 필요함.",
+    "이 파일은 정책 데이터와 실행 시 평가 계약이다. LLM 호출·공용 DTO·Java 서비스·DB 마이그레이션·점수 계산 코드를 변경하지 않았다.",
+    "기존 projectRouting을 읽는 구현은 consultationAssessment 및 전역 평가 계약을 사용하도록 별도 수정해야 한다.",
+    "고객 상황에 따라 점수와 순위가 바뀌는 실행 검증은 Java 연동 후 필요하다."
+  ],
+  "migration": {
+    "inputs": [
+      "policy-db-v3/policies.json (= 업로드 policies_1.json)",
+      "policy-db-v3/minor-supplement/minor-policies.json"
+    ],
+    "preservation": "기존 16개 정책·42개 분기 및 출처 보존. 고정 채널 설정과 프로젝트 추천 규칙만 재구성.",
+    "branchChanges": [
+      {
+        "branchCode": "CARD_REPORT",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "CARD_UNKNOWN_PAYMENT",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "CARD_RELEASE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_ELECTRONIC_INCREASE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_ELECTRONIC_LOOKUP",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_TELE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_ATM",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_SECURITY_DOWNGRADE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_PC_SIMPLE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_WON_CERT",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "LIMIT_OVERSEAS",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "PRE_DEPARTURE_CHECKLIST",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "PW_RELEASE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "PW_FORGOTTEN_LOCKED",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "PW_REPEAT",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "PW_RESET",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "PW_OVERSEAS",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "SECURITY_SECURITY_CARD_RELEASE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "SECURITY_OTP_RELEASE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "SECURITY_OVERSEAS",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "EMPLOYEE_REREGISTER",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "CONTACT_ONLINE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "CONTACT_FAILED",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_SELF",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_UNDER14",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_SELF_DOCS",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_PROXY_DOCS",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CLOSE_SELF",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CLOSE_PARENT",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CLOSE_LEGAL_REP",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CLOSE_REMOTE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_WEB_REGISTER",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_WEB_UNDER14",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_WON_UNDER17",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_WON_REGISTER",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_REMOTE_OPEN_GUIDE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CASH_SELF",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CASH_UNDER14",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CASH_PARENT",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_PARENT_SIGNATURE",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_PHONE_PRODUCT",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      },
+      {
+        "branchCode": "MINOR_CHILD_HOUSING_TAX",
+        "removedFields": [
+          "basis",
+          "supportMode",
+          "candidateChannels",
+          "contactTarget",
+          "channelAvailability",
+          "purpose",
+          "executionCompleted"
+        ]
+      }
+    ],
+    "contentAdjustment": "CARD_UNKNOWN_PAYMENT의 프로젝트 이메일 제한 문장을 채널 비지정 사고 대응 원칙으로 교체. 공식 FAQ 절차·조건·문서 요구는 유지.",
+    "newSourceCoverage": "사용자 제공 자동이체 관련 FAQ 9건 및 공식 검색에서 추가 확인한 우리틴틴 자동이체 제한 1건."
+  }
+}

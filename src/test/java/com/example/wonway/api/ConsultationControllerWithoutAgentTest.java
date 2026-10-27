@@ -1,6 +1,7 @@
 package com.example.wonway.api;
 
 import com.example.wonway.session.InMemoryConsultationSessionService;
+import com.example.wonway.agent.ConversationMemory;
 import com.jayway.jsonpath.JsonPath;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * 세션 생성·종료는 동작하고, 메시지 API만 503을 반환해야 합니다.
  */
 @WebMvcTest(ConsultationController.class)
-@Import({InMemoryConsultationSessionService.class, GlobalExceptionHandler.class})
+@Import({InMemoryConsultationSessionService.class, ConversationMemory.class, GlobalExceptionHandler.class})
 class ConsultationControllerWithoutAgentTest {
 
     @Autowired

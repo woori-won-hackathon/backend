@@ -26,4 +26,5 @@ public class PolicyDatasetEntity {
     public int getSchemaVersion() { return schemaVersion; }
     public String getChecksum() { return checksum; }
     public String getMetadataJson() { return metadataJson; }
+    public void updateChecksum(String checksum) { this.checksum = checksum; }
 }

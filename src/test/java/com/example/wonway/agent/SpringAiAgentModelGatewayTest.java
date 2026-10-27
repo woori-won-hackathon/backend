@@ -3,6 +3,7 @@ package com.example.wonway.agent;
 import com.example.wonway.agent.model.GeneratedConsultation;
 import org.junit.jupiter.api.Test;
 import org.springframework.ai.chat.messages.AssistantMessage;
+import org.springframework.ai.chat.messages.Message;
 import org.springframework.ai.chat.model.ChatModel;
 import org.springframework.ai.chat.model.ChatResponse;
 import org.springframework.ai.chat.model.Generation;
@@ -13,6 +14,7 @@ import org.springframework.ai.model.tool.ToolCallingChatOptions;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.Queue;
+import java.util.ArrayList;
 
 import static com.example.wonway.agent.ConsultationToolsTest.MATCHED;
 import static com.example.wonway.agent.ConsultationToolsTest.StubChannelRankingService;
@@ -22,6 +24,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 class SpringAiAgentModelGatewayTest {
+
+    @Test
+    void sendsPriorUserAndAssistantMessagesBeforeLatestFollowUp() {
+        QueueChatModel model = new QueueChatModel(textResponse("""
+                {"answer":"26일 변경 방법을 확인할게요.","consultationSummary":"자동이체 변경 안내","intentClarificationNeeded":false}
+                """));
+        var gateway = new SpringAiAgentModelGateway(model);
+        var tools = new ConsultationTools(new StubPolicyService(MATCHED),
+                new StubChannelRankingService(rankedEvaluation()));
+        gateway.generate("26일이요", List.of(new ConversationMemory.Turn("자동이체 날짜를 바꿀래요", "며칠로 변경할까요?")), tools);
+        assertThat(model.prompts.get(0).getInstructions().subList(1, 3)).extracting(Message::getText)
+                .containsExactly("자동이체 날짜를 바꿀래요", "며칠로 변경할까요?");
+        // Spring AI appends the structured-output schema to the latest user message.
+        assertThat(model.prompts.get(0).getInstructions().get(3).getText()).startsWith("26일이요");
+        assertThat(model.prompts.get(0).getInstructions().get(1)).isInstanceOf(org.springframework.ai.chat.messages.UserMessage.class);
+        assertThat(model.prompts.get(0).getInstructions().get(2)).isInstanceOf(AssistantMessage.class);
+    }
 
     @Test
     void executesSpringAiToolCallsAndParsesFinalStructuredOutput() {
@@ -94,6 +113,7 @@ class SpringAiAgentModelGatewayTest {
     private static final class QueueChatModel implements ChatModel {
         private final Queue<ChatResponse> responses;
         private int callCount;
+        private final List<Prompt> prompts = new ArrayList<>();
 
         private QueueChatModel(ChatResponse... responses) {
             this.responses = new ArrayDeque<>(List.of(responses));
@@ -102,6 +122,7 @@ class SpringAiAgentModelGatewayTest {
         @Override
         public ChatResponse call(Prompt prompt) {
             callCount++;
+            prompts.add(prompt);
             return responses.remove();
         }
 

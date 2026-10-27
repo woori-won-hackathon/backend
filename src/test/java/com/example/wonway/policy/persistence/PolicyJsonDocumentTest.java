@@ -11,9 +11,9 @@ class PolicyJsonDocumentTest {
     }
     @Test void latestJsonContainsAllDataWithoutFixedChannels() throws Exception {
         var doc=PolicyJsonDocument.parse(input());
-        assertEquals(26,doc.root().path("policies").size());
-        assertEquals(52,doc.root().path("branches").size());
-        assertEquals(37,doc.root().path("sources").size());
+        assertEquals(27,doc.root().path("policies").size());
+        assertEquals(53,doc.root().path("branches").size());
+        assertEquals(39,doc.root().path("sources").size());
         for(var b:doc.root().path("branches")) {
             assertFalse(b.has("projectRouting"));
             assertEquals("RUNTIME_CONTEXT_EVALUATION",b.path("consultationAssessment").path("mode").asText());

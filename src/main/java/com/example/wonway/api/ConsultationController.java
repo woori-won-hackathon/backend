@@ -63,13 +63,17 @@ public class ConsultationController {
         }
         // 상담 원문은 로그에 남기지 않고 길이만 기록한다.
         log.info("메시지 수신 sessionId={} length={}", sessionId, request.message().length());
+        long started = System.nanoTime();
         AgentResult result = agentService.chat(sessionId, request.message());
+        log.info("상담 응답 완료 sessionId={} responseType={} recommendations={} actions={} elapsedMs={}",
+                sessionId, result.responseType(), result.recommendations().size(), result.actions().size(),
+                (System.nanoTime() - started) / 1_000_000);
         return ConsultationResponseMapper.toMessageResponse(sessionId, result);
     }
 
     /**
      * 세션을 종료 상태로 바꾼다. DB의 정책 데이터는 건드리지 않는다.
-     * TODO: A가 AgentService.clearConversation(UUID)를 추가하면 종료 표시 뒤에 호출해 ChatMemory를 삭제한다.
+     * 세션 서비스가 메모리의 대화도 삭제하며, 처리 중인 응답이 기록을 복구하지 못하게 한다.
      */
     @DeleteMapping("/{sessionId}")
     public ResponseEntity<Void> closeSession(@PathVariable UUID sessionId) {

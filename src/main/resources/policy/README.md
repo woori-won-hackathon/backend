@@ -6,10 +6,10 @@
 ## 저장 구조
 
 - kb_dataset: 1건. JSON 버전, 파일 체크섬, 전역 계약/제한 등 원본 메타데이터
-- kb_source: 37건. FAQ 출처 및 원본 필드
-- kb_policy: 26건. 정책 의도, 기간, 승인 상태 및 원본 필드
-- kb_branch: 52건. 상황 조건, 상담 시 평가 항목, 처리 절차 및 원본 필드
-- kb_branch_source: 60건. 분기-출처 연결
+- kb_source: 39건. FAQ 출처 및 원본 필드
+- kb_policy: 27건. 정책 의도, 기간, 승인 상태 및 원본 필드
+- kb_branch: 53건. 상황 조건, 상담 시 평가 항목, 처리 절차 및 원본 필드
+- kb_branch_source: 62건. 분기-출처 연결
 - kb_project_rule: 5건. 공통 프로젝트 원칙
 
 조건·절차는 TEXT 컬럼의 JSON으로 보존합니다. 검색용 컬럼과 원본 payload_json을 함께 저장합니다.
@@ -49,6 +49,14 @@ B의 PolicyServiceImpl에서 이를 사용해 상황 조건 검증 및 공용 Po
 PolicyServiceImpl/ChannelRankingServiceImpl과 A의 도구 연결은 이번 저장 작업 범위에 포함하지 않았습니다.
 현재 공용 PolicySearchCondition에는 나이·방문자·시도 단계 등 상황 전달 필드가 부족하므로 팀 계약 합의가 필요합니다.
 모든 정책은 DRAFT입니다. 운영 승인으로 자동 승격하지 않습니다.
+
+## 당행 자동이체 추가 업데이트
+
+2026-10-27 `policies_3.json`을 원본 그대로 `policies.json`에 반영했습니다. 기존 출처·정책·분기는 변경하지 않고 출처 2건, `INTRABANK_AUTO` 정책 1건, `INTRABANK_AUTO_GUIDE` 분기 1건과 출처 연결 2건만 추가했습니다. 이전 파일은 `history/policies-before-intrabank.json`에 보관합니다.
+
+`PolicyAppendUpdateService`는 이전 파일과 DB 체크섬·전체 기존 payload·출처 연결이 일치할 때만 추가분을 하나의 트랜잭션으로 저장합니다. 기존 데이터 삭제, 자동 덮어쓰기, DRAFT 승인 승격은 하지 않습니다. 별도 요청 없이 자동 실행되지 않습니다. `POLICY_MYSQL_APPEND_UPDATE=true`로 `PolicyAppendUpdateMySqlTest`를 명시적으로 실행하면 업데이트하고 전체 저장 내용·중복 방지·당행 정책 조회·채널 평가를 검증합니다.
+
+AI 카탈로그의 `INTRABANK_AUTO_TRANSFER` / `INTRABANK_TRANSFER` / `transferType=INTRABANK` 코드도 함께 추가했으며, 적용 가능한 당행 분기는 자동이체 목업 메뉴로 연결합니다. 카탈로그는 시작 시 읽으므로 실행 중인 서버를 재시작해야 합니다.
 
 ## MySQL 확인
 
