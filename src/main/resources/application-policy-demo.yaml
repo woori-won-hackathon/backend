@@ -1,0 +1,7 @@
+# 개발용 FAQ와 모의 상담 운영정보. 실제 은행 운영 상태가 아님.
+# IntelliJ Active profiles: policy-demo
+policy:
+  demo-mode: true
+  channel-demo-mode: true
+  seed:
+    enabled: false

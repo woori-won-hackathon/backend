@@ -1,0 +1,1319 @@
+{
+  "datasetVersion": 4,
+  "note": "LLM 입력 코드 참고용. 예시 고객 메시지의 정답 또는 추천 순위가 아님. 실제 적용은 DB에서 검증. 미언급 facts는 누락/null.",
+  "policies": [
+    {
+      "policyCode": "CARD_LOSS",
+      "intent": "CARD_LOSS",
+      "title": "카드분실 및 신고 후 문의",
+      "customerScope": "ISSUER_DEPENDENT",
+      "productScope": "CARD",
+      "conditionBranches": [
+        {
+          "branchCode": "CARD_REPORT",
+          "conditions": {
+            "all": [
+              {
+                "field": "issuer",
+                "op": "EQ",
+                "value": "WOORI_CARD"
+              },
+              {
+                "field": "requestKind",
+                "op": "EQ",
+                "value": "REPORT_LOSS"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "CARD_UNKNOWN_PAYMENT",
+          "conditions": {
+            "all": [
+              {
+                "field": "issuer",
+                "op": "EQ",
+                "value": "WOORI_CARD"
+              },
+              {
+                "field": "unknownPayment",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "CARD_RELEASE",
+          "conditions": {
+            "all": [
+              {
+                "field": "issuer",
+                "op": "EQ",
+                "value": "WOORI_CARD"
+              },
+              {
+                "field": "requestKind",
+                "op": "EQ",
+                "value": "RELEASE_LOSS"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "TRANSFER_LIMIT",
+      "intent": "TRANSFER_LIMIT",
+      "title": "이체한도 종류별 처리",
+      "customerScope": "CHANNEL_DEPENDENT",
+      "productScope": "ELECTRONIC_BANKING",
+      "conditionBranches": [
+        {
+          "branchCode": "LIMIT_ELECTRONIC_INCREASE",
+          "conditions": {
+            "all": [
+              {
+                "field": "limitType",
+                "op": "EQ",
+                "value": "ELECTRONIC"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "INCREASE"
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "LIMIT_ELECTRONIC_LOOKUP",
+          "conditions": {
+            "all": [
+              {
+                "field": "limitType",
+                "op": "EQ",
+                "value": "ELECTRONIC"
+              },
+              {
+                "field": "operation",
+                "op": "IN",
+                "value": [
+                  "LOOKUP",
+                  "DECREASE"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "LIMIT_TELE",
+          "conditions": {
+            "all": [
+              {
+                "field": "limitType",
+                "op": "EQ",
+                "value": "TELEBANKING"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "CHANGE"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "LIMIT_ATM",
+          "conditions": {
+            "all": [
+              {
+                "field": "limitType",
+                "op": "EQ",
+                "value": "ATM"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "RESTORE"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "LIMIT_SECURITY_DOWNGRADE",
+          "conditions": {
+            "all": [
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "OTP_TO_SECURITY_CARD"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "LIMIT_PC_SIMPLE",
+          "conditions": {
+            "all": [
+              {
+                "field": "limitType",
+                "op": "EQ",
+                "value": "PC_SIMPLE_TRANSFER"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "LIMIT_WON_CERT",
+          "conditions": {
+            "all": [
+              {
+                "field": "limitType",
+                "op": "EQ",
+                "value": "WON_CERT_TRANSFER"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "LIMIT_OVERSEAS",
+          "conditions": {
+            "all": [
+              {
+                "field": "limitType",
+                "op": "EQ",
+                "value": "ELECTRONIC"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "INCREASE"
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "USER_PASSWORD",
+      "intent": "USER_PASSWORD_ERROR",
+      "title": "이용자 비밀번호 오류·재설정",
+      "customerScope": "CONDITION_DEPENDENT",
+      "productScope": "INTERNET_MOBILE_BANKING",
+      "conditionBranches": [
+        {
+          "branchCode": "PW_RELEASE",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "USER_LOGIN_PASSWORD"
+              },
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "RELEASE_ERROR"
+              },
+              {
+                "field": "knowsPassword",
+                "op": "EQ",
+                "value": true
+              },
+              {
+                "field": "errorCount",
+                "op": "EQ",
+                "value": 3
+              },
+              {
+                "field": "repeatDuringRelease",
+                "op": "EQ",
+                "value": false
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "PW_FORGOTTEN_LOCKED",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "USER_LOGIN_PASSWORD"
+              },
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "knowsPassword",
+                "op": "EQ",
+                "value": false
+              },
+              {
+                "field": "errorCount",
+                "op": "EQ",
+                "value": 3
+              },
+              {
+                "field": "repeatDuringRelease",
+                "op": "EQ",
+                "value": false
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "PW_REPEAT",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "USER_LOGIN_PASSWORD"
+              },
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "repeatDuringRelease",
+                "op": "EQ",
+                "value": true
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "PW_RESET",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "USER_LOGIN_PASSWORD"
+              },
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "RESET"
+              },
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "age",
+                "op": "BETWEEN",
+                "value": [
+                  19,
+                  130
+                ]
+              },
+              {
+                "field": "nationality",
+                "op": "EQ",
+                "value": "KR"
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": false
+              },
+              {
+                "field": "repeatDuringRelease",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "PW_OVERSEAS",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "USER_LOGIN_PASSWORD"
+              },
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "errorCount",
+                "op": "EQ",
+                "value": 3
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_ELIGIBILITY",
+      "intent": "MINOR_ACCOUNT_PREPARATION",
+      "title": "미성년자 방문 가능 기준",
+      "customerScope": "MINOR",
+      "productScope": "DEMAND_DEPOSIT",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_SELF",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  14,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "SELF"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_UNDER14",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  13
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "SELF"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_DOCUMENTS",
+      "intent": "MINOR_ACCOUNT_PREPARATION",
+      "title": "미성년자 방문 유형별 준비서류",
+      "customerScope": "MINOR",
+      "productScope": "DEMAND_DEPOSIT",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_SELF_DOCS",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  14,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "SELF"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_PROXY_DOCS",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "PARENT_PROXY"
+              },
+              {
+                "field": "legalRepresentative",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "OVERSEAS_PREPARATION",
+      "intent": "OVERSEAS_BANKING_PREPARATION",
+      "title": "출국 전 전자금융 준비",
+      "customerScope": "CONDITION_DEPENDENT",
+      "productScope": "INTERNET_MOBILE_BANKING",
+      "conditionBranches": [
+        {
+          "branchCode": "PRE_DEPARTURE_CHECKLIST",
+          "conditions": {
+            "all": [
+              {
+                "field": "travelStage",
+                "op": "EQ",
+                "value": "BEFORE_DEPARTURE"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "SECURITY_MEDIA_PASSWORD",
+      "intent": "SECURITY_MEDIA_PASSWORD_ERROR",
+      "title": "보안카드·OTP 오류해제",
+      "customerScope": "CONDITION_DEPENDENT",
+      "productScope": "SECURITY_MEDIA",
+      "conditionBranches": [
+        {
+          "branchCode": "SECURITY_SECURITY_CARD_RELEASE",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "SECURITY_CARD"
+              },
+              {
+                "field": "securityMediaLocked",
+                "op": "EQ",
+                "value": true
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "SECURITY_OTP_RELEASE",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "OTP"
+              },
+              {
+                "field": "securityMediaLocked",
+                "op": "EQ",
+                "value": true
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "SECURITY_OVERSEAS",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "IN",
+                "value": [
+                  "SECURITY_CARD",
+                  "OTP"
+                ]
+              },
+              {
+                "field": "securityMediaLocked",
+                "op": "EQ",
+                "value": true
+              },
+              {
+                "field": "overseas",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "EMPLOYEE_PASSWORD",
+      "intent": "CORPORATE_EMPLOYEE_PASSWORD_ERROR",
+      "title": "기업 직원ID 비밀번호 관리",
+      "customerScope": "CORPORATE_EMPLOYEE",
+      "productScope": "CORPORATE_BANKING",
+      "conditionBranches": [
+        {
+          "branchCode": "EMPLOYEE_REREGISTER",
+          "conditions": {
+            "all": [
+              {
+                "field": "credentialType",
+                "op": "EQ",
+                "value": "CORPORATE_EMPLOYEE_PASSWORD"
+              },
+              {
+                "field": "employeePasswordIssue",
+                "op": "IN",
+                "value": [
+                  "FORGOTTEN",
+                  "ERROR_COUNT_PRESENT"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "CONTACT_CHANGE",
+      "intent": "CONTACT_PHONE_CHANGE",
+      "title": "고객정보 전화번호 변경",
+      "customerScope": "INDIVIDUAL",
+      "productScope": "CUSTOMER_PROFILE",
+      "conditionBranches": [
+        {
+          "branchCode": "CONTACT_ONLINE",
+          "conditions": {
+            "all": [
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "onlineChangeFailed",
+                "op": "EQ",
+                "value": false
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "CONTACT_FAILED",
+          "conditions": {
+            "all": [
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "INDIVIDUAL"
+              },
+              {
+                "field": "onlineChangeFailed",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_CLOSURE",
+      "intent": "MINOR_DEPOSIT_CLOSURE",
+      "title": "미성년자 예금 해지",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_CLOSE_SELF",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "SELF"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_CLOSE_PARENT",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "PARENT_PROXY"
+              },
+              {
+                "field": "parentalAuthority",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_CLOSE_LEGAL_REP",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "LEGAL_REPRESENTATIVE"
+              },
+              {
+                "field": "legalRepresentative",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_CLOSE_REMOTE",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "executionChannel",
+                "op": "EQ",
+                "value": "REMOTE"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_REGISTRATION",
+      "intent": "MINOR_EBANKING_REGISTRATION",
+      "title": "미성년자 전자뱅킹 회원가입",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_WEB_REGISTER",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  14,
+                  18
+                ]
+              },
+              {
+                "field": "registrationChannel",
+                "op": "EQ",
+                "value": "WEB"
+              },
+              {
+                "field": "hasWooriEligibleAccount",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_WEB_UNDER14",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  13
+                ]
+              },
+              {
+                "field": "registrationChannel",
+                "op": "EQ",
+                "value": "WEB"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_WON_UNDER17",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  16
+                ]
+              },
+              {
+                "field": "registrationChannel",
+                "op": "EQ",
+                "value": "WON"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_WON_REGISTER",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  17,
+                  18
+                ]
+              },
+              {
+                "field": "registrationChannel",
+                "op": "EQ",
+                "value": "WON"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_REMOTE_OPEN",
+      "intent": "MINOR_REMOTE_ACCOUNT_OPENING",
+      "title": "미성년자 WON 계좌 개설 준비",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_REMOTE_OPEN_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_CASH_CARD",
+      "intent": "MINOR_CASH_CARD_ISSUANCE",
+      "title": "미성년자 현금카드 발급",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_CASH_SELF",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  14,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "SELF"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_CASH_UNDER14",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  13
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "SELF"
+              }
+            ]
+          }
+        },
+        {
+          "branchCode": "MINOR_CASH_PARENT",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "PARENT_PROXY"
+              },
+              {
+                "field": "parentalAuthority",
+                "op": "EQ",
+                "value": true
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_PROXY_SIGNATURE",
+      "intent": "MINOR_PROXY_OPENING_SIGNATURE",
+      "title": "부모 대리 개설 서명·도장",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_PARENT_SIGNATURE",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "visitorType",
+                "op": "EQ",
+                "value": "PARENT_PROXY"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_PHONE_DEPOSIT",
+      "intent": "MINOR_PHONE_DEPOSIT_ELIGIBILITY",
+      "title": "미성년자의 전화 예적금 가입 문의",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_PHONE_PRODUCT",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "MINOR_HOUSING_TAX",
+      "intent": "MINOR_HOUSING_TAX_DEDUCTION",
+      "title": "자녀 명의 청약 소득공제 문의",
+      "customerScope": "MINOR",
+      "productScope": "FAQ_SPECIFIC",
+      "conditionBranches": [
+        {
+          "branchCode": "MINOR_CHILD_HOUSING_TAX",
+          "conditions": {
+            "all": [
+              {
+                "field": "childAge",
+                "op": "BETWEEN",
+                "value": [
+                  0,
+                  18
+                ]
+              },
+              {
+                "field": "accountOwner",
+                "op": "EQ",
+                "value": "CHILD"
+              },
+              {
+                "field": "deductionClaimant",
+                "op": "EQ",
+                "value": "PARENT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "PENSION_FUND_AUTO",
+      "intent": "AUTO_TRANSFER_REGISTRATION",
+      "title": "연금저축펀드 자동이체 등록",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "PENSION_SAVINGS_FUND",
+      "conditionBranches": [
+        {
+          "branchCode": "PENSION_FUND_AUTO_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "transferProduct",
+                "op": "EQ",
+                "value": "PENSION_SAVINGS_FUND"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "REGISTER"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "SAVINGS_AUTO_SKIP",
+      "intent": "AUTO_TRANSFER_SKIP_INSTALLMENT",
+      "title": "적금 자동이체 한 회차 건너뛰기",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "INSTALLMENT_SAVINGS",
+      "conditionBranches": [
+        {
+          "branchCode": "SAVINGS_AUTO_SKIP_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "transferProduct",
+                "op": "EQ",
+                "value": "INSTALLMENT_SAVINGS"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "SKIP_ONE_INSTALLMENT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "FUND_AUTO_MISSED",
+      "intent": "AUTO_TRANSFER_NOT_PROCESSED",
+      "title": "적립식 펀드 자동이체 미출금",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "INSTALLMENT_FUND",
+      "conditionBranches": [
+        {
+          "branchCode": "FUND_AUTO_MISSED_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "transferProduct",
+                "op": "EQ",
+                "value": "INSTALLMENT_FUND"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "CHECK_NOT_PROCESSED"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "SOLE_PROPRIETOR_TRANSFER_FEE",
+      "intent": "TRANSFER_FEE_GUIDANCE",
+      "title": "개인사업자 타행 이체수수료 안내",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "TRANSFER",
+      "conditionBranches": [
+        {
+          "branchCode": "SOLE_PROPRIETOR_TRANSFER_FEE_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "customerType",
+                "op": "EQ",
+                "value": "SOLE_PROPRIETOR"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "CHECK_TRANSFER_FEE"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "HOUSING_AUTO_TAX_LIMIT",
+      "intent": "AUTO_TRANSFER_TAX_LIMIT",
+      "title": "청약 세금우대한도 초과 자동이체 미처리",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "HOUSING_SUBSCRIPTION",
+      "conditionBranches": [
+        {
+          "branchCode": "HOUSING_AUTO_TAX_LIMIT_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "transferProduct",
+                "op": "EQ",
+                "value": "HOUSING_SUBSCRIPTION"
+              },
+              {
+                "field": "failureNoticeType",
+                "op": "EQ",
+                "value": "TAX_PREFERENCE_LIMIT_EXCEEDED"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "DEMAND_ACCOUNT_CLOSURE",
+      "intent": "DEMAND_ACCOUNT_CLOSURE",
+      "title": "입출금계좌 비대면 해지와 연결 서비스 제한",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "DEMAND_DEPOSIT",
+      "conditionBranches": [
+        {
+          "branchCode": "DEMAND_ACCOUNT_CLOSURE_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "CLOSE_ACCOUNT"
+              },
+              {
+                "field": "accountType",
+                "op": "EQ",
+                "value": "DEMAND_DEPOSIT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "INTERBANK_AUTO",
+      "intent": "INTERBANK_AUTO_TRANSFER",
+      "title": "타행 자동이체 등록·미처리·관리 안내",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "INTERBANK_TRANSFER",
+      "conditionBranches": [
+        {
+          "branchCode": "INTERBANK_AUTO_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "transferType",
+                "op": "EQ",
+                "value": "INTERBANK"
+              },
+              {
+                "field": "operation",
+                "op": "IN",
+                "value": [
+                  "REGISTER",
+                  "CHECK_NOT_PROCESSED",
+                  "CHANGE",
+                  "CHANGE_DATE",
+                  "CANCEL",
+                  "LOOKUP"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "RENT_PAYMENT_STATEMENT",
+      "intent": "RENT_PAYMENT_STATEMENT",
+      "title": "월세납입내역서 발급",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "TRANSFER",
+      "conditionBranches": [
+        {
+          "branchCode": "RENT_PAYMENT_STATEMENT_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "ISSUE_RENT_STATEMENT"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "IRP_AUTO_LIMIT",
+      "intent": "IRP_CONTRIBUTION_LIMIT",
+      "title": "IRP 납입한도 초과와 미출금 자동이체",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "IRP",
+      "conditionBranches": [
+        {
+          "branchCode": "IRP_AUTO_LIMIT_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "transferProduct",
+                "op": "EQ",
+                "value": "IRP"
+              },
+              {
+                "field": "operation",
+                "op": "IN",
+                "value": [
+                  "CHECK_LIMIT",
+                  "INCREASE_LIMIT",
+                  "CHECK_NOT_PROCESSED"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "policyCode": "TEENTEN_AUTO_RESTRICTION",
+      "intent": "AUTO_TRANSFER_REGISTRATION",
+      "title": "우리틴틴 자동이체 계좌 등록 제한",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "WOORI_TEENTEN",
+      "conditionBranches": [
+        {
+          "branchCode": "TEENTEN_AUTO_RESTRICTION_GUIDE",
+          "conditions": {
+            "all": [
+              {
+                "field": "transferProduct",
+                "op": "EQ",
+                "value": "WOORI_TEENTEN"
+              },
+              {
+                "field": "operation",
+                "op": "EQ",
+                "value": "REGISTER"
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
