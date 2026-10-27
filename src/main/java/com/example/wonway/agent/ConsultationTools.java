@@ -30,7 +30,11 @@ public final class ConsultationTools {
     private ChannelEvaluation lastChannelEvaluation;
     private final UUID sessionId;
     private ConsultationUnderstanding understanding;
-    void understanding(ConsultationUnderstanding value) { understanding = value; }
+    void understanding(ConsultationUnderstanding value) {
+        // Results from older conditions must not survive a model's state correction.
+        clearResults();
+        understanding = value;
+    }
     ConsultationUnderstanding understanding() { return understanding; }
 
     public ConsultationTools(PolicyService policyService, ChannelRankingService channelRankingService) {

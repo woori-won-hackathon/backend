@@ -15,7 +15,7 @@ import java.util.function.Supplier;
 import java.util.ArrayList;
 import java.util.List;
 
-/** Legacy tool-calling protocol fixture. Production uses StagedAgentModelGateway. */
+/** Legacy tool-calling protocol fixture. Production uses ToolCallingAgentModelGateway. */
 class SpringAiAgentModelGateway implements AgentModelGateway {
 
     private static final String SYSTEM_PROMPT = """

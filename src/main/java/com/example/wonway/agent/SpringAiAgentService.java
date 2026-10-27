@@ -61,12 +61,14 @@ public class SpringAiAgentService implements AgentService {
         ConsultationTools tools = new ConsultationTools(policyService, channelRankingService, sessionId);
         log.info("AI 응답 생성 시작 sessionId={} historyTurns={}", sessionId, history.size());
         GeneratedConsultation generated = modelGateway.generate(message, history, tools);
+        if (generated == null) throw new AgentUnavailableException("상담 모델 응답이 비어 있습니다.");
         PolicyEvaluation policy = tools.lastPolicyEvaluation();
         ChannelEvaluation channels = tools.lastChannelEvaluation();
 
         // A question is a separate phase, including when policy is known but context is not.
         if (tools.understanding() != null && Boolean.TRUE.equals(generated.intentClarificationNeeded())) {
-            return new AgentResult(generated.answer(), List.of(), generated.consultationSummary(),
+            return new AgentResult(generated.answer(), List.of(),
+                    nonBlankOrDefault(tools.understanding().purpose(), "상담 업무 확인이 필요함"),
                     ResponseType.FOLLOW_UP, List.of(), null, tools.understanding());
         }
 
@@ -94,11 +96,16 @@ public class SpringAiAgentService implements AgentService {
         ResponseType responseType = responseType(policy, channels);
         var recommendations = responseType == ResponseType.CHANNEL_RECOMMENDATION
                 ? tools.verifiedRecommendations() : List.<com.example.wonway.common.contract.ChannelRecommendation>of();
+        // Model-written questions are preserved above; recommendation prose cannot invent a result or execution.
+        String answer = tools.understanding() != null
+                ? responseType == ResponseType.CHANNEL_RECOMMENDATION
+                    ? "확인된 조건으로 상담 방법을 비교했어요. 이용할 채널을 선택해 주세요." : fallback
+                : nonBlankOrDefault(generated.answer(), fallback);
         return new AgentResult(
-                tools.understanding() != null && responseType != ResponseType.CHANNEL_RECOMMENDATION ? fallback
-                        : nonBlankOrDefault(generated == null ? null : generated.answer(), fallback),
+                answer,
                 recommendations,
-                nonBlankOrDefault(generated == null ? null : generated.consultationSummary(), EMPTY_SUMMARY),
+                nonBlankOrDefault(tools.understanding() == null ? generated.consultationSummary()
+                        : tools.understanding().purpose(), EMPTY_SUMMARY),
                 responseType,
                 responseType == ResponseType.CHANNEL_RECOMMENDATION && recommendations.stream()
                         .anyMatch(recommendation -> recommendation.processable() && "CHATBOT".equals(recommendation.channel().name()))

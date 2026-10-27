@@ -73,6 +73,9 @@ class LiveChannelToolDiagnosisTest {
                     + " channels=" + result.recommendations().stream().map(r -> r.channel().name()).toList()
                     + " menus=" + result.actions().stream().map(a -> a.menuId()).toList());
             assertThat(result.responseType()).isEqualTo(ResponseType.CHANNEL_RECOMMENDATION);
+            assertThat(result.understanding().context()).containsEntry("selfServiceAvailable", true)
+                    .containsEntry("urgent", false).containsEntry("acceptsAsyncReply", true)
+                    .containsEntry("realTimeConversationNeeded", false);
             assertThat(result.recommendations()).extracting(r -> r.channel())
                     .containsExactly(ChannelType.CHATBOT, ChannelType.EMAIL, ChannelType.PHONE);
             assertThat(result.actions()).extracting(a -> a.menuId()).containsExactly("AUTO_TRANSFER");
