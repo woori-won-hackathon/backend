@@ -526,6 +526,37 @@
         "exactQuestion": "자동이체 등록은 가능한가요?"
       },
       "notes": "공식 FAQ 검색 후 해당 제목의 답변을 직접 확인. 개별 고정 링크는 확보하지 않아 검색 시작 URL과 제목을 기록. 게시·개정일은 표시되지 않아 시행일을 추정하지 않음."
+    },
+    {
+      "sourceId": "AUTO_TERMS_ACCOUNT_TO_ACCOUNT",
+      "title": "우리은행 계좌간 자동이체 약관",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?ARTICLE_ID=15692&BOARD_ID=B00205&bbsMode=view&withyou=CQFNT0034",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "계좌간 자동이체는 지정일 출금·입금하며 신규·변경·해지 신청은 이체지정일 전 영업일까지 서면·인터넷뱅킹·스마트뱅킹·텔레뱅킹·자동이체 통합관리서비스로 신고한다. 지급자금 부족 처리와 상품별 예외는 약관 제2조·제7조에 따른다.",
+      "facts": [
+        "계좌간 자동이체의 신규·변경·해지 신청은 이체지정일 전 영업일까지 신고한다.",
+        "약관은 서면·인터넷뱅킹·스마트뱅킹·텔레뱅킹·자동이체 통합관리서비스 신청 경로를 열거한다.",
+        "계좌간 자동이체의 지급자금 부족 처리에는 입금계좌 유형별 예외가 있다."
+      ],
+      "provenance": "OFFICIAL_SITE_CHECK",
+      "notes": "2016년 게시된 계좌간 자동이체 약관. 은행 승인 및 최신 개정본 확인 전까지 DRAFT. 이 출처만으로 고객별 변경 승인·적용 회차를 확정하지 않는다."
+    },
+    {
+      "sourceId": "AUTO_WEB_SERVICE_HOURS",
+      "title": "우리은행 개인인터넷뱅킹 자동이체 이용시간",
+      "sourceUrl": "https://spot.wooribank.com/pot/Dream?withyou=CQIBG0024",
+      "sourceType": "OFFICIAL_WEB",
+      "evidenceStatus": "WEB_CHECKED",
+      "checkedOn": "2026-10-27",
+      "summary": "개인인터넷뱅킹 자동이체 조회·등록·해지 및 변경 메뉴와 이용시간을 안내한다. 변경은 06:00~23:59, 휴일 불가로 표시된다.",
+      "facts": [
+        "개인인터넷뱅킹 자동이체 조회·등록·해지 메뉴가 있다.",
+        "개인인터넷뱅킹 자동이체 변경은 06:00~23:59이며 휴일에는 이용할 수 없다고 안내한다."
+      ],
+      "provenance": "OFFICIAL_SITE_CHECK",
+      "notes": "이용시간은 개인인터넷뱅킹 기준. 고객별 처리 가능 여부나 모바일 앱 운영시간으로 확대하지 않는다."
     }
   ],
   "policies": [
@@ -835,6 +866,18 @@
       "title": "우리틴틴 자동이체 계좌 등록 제한",
       "customerScope": "FAQ_CONDITION_DEPENDENT",
       "productScope": "WOORI_TEENTEN",
+      "approvalStatus": "DRAFT",
+      "effectiveFrom": null,
+      "effectiveTo": null,
+      "verifiedBy": null,
+      "version": 4
+    },
+    {
+      "policyCode": "INTRABANK_AUTO",
+      "intent": "INTRABANK_AUTO_TRANSFER",
+      "title": "우리은행 계좌간 자동이체 등록·변경·해지 안내",
+      "customerScope": "FAQ_CONDITION_DEPENDENT",
+      "productScope": "INTRABANK_TRANSFER",
       "approvalStatus": "DRAFT",
       "effectiveFrom": null,
       "effectiveTo": null,
@@ -4172,6 +4215,84 @@
         "mode": "RUNTIME_CONTEXT_EVALUATION",
         "policyConditionFields": [
           "transferProduct",
+          "operation"
+        ],
+        "customerContextFields": [
+          "requestGoal",
+          "attemptedSteps",
+          "observedError",
+          "needsAccountSpecificCheck",
+          "timeConstraint",
+          "incidentSignals",
+          "appWebUsability",
+          "interactionNeeds",
+          "explicitChannelPreference"
+        ],
+        "contactOrganizationHint": "WOORI_BANK",
+        "contactOrganizationHintMeaning": "업무 담당 기관 식별용. 채널 추천 결과가 아님.",
+        "executionCompleted": false
+      }
+    },
+    {
+      "branchCode": "INTRABANK_AUTO_GUIDE",
+      "policyCode": "INTRABANK_AUTO",
+      "title": "당행 계좌간 자동이체 관리 안내",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferType",
+            "op": "EQ",
+            "value": "INTRABANK"
+          },
+          {
+            "field": "operation",
+            "op": "IN",
+            "value": [
+              "REGISTER",
+              "CHANGE",
+              "CHANGE_DATE",
+              "CANCEL",
+              "LOOKUP"
+            ]
+          }
+        ]
+      },
+      "sourceIds": [
+        "AUTO_TERMS_ACCOUNT_TO_ACCOUNT",
+        "AUTO_WEB_SERVICE_HOURS"
+      ],
+      "officialSteps": [
+        "우리은행 계좌간 자동이체는 고객이 지정한 날 출금계좌에서 입금계좌로 이체하는 업무다.",
+        "계좌간 자동이체 신규·변경·해지는 이체지정일 전 영업일까지 신청해야 한다.",
+        "약관상 신청 경로는 서면·인터넷뱅킹·스마트뱅킹·텔레뱅킹·자동이체 통합관리서비스다.",
+        "개인인터넷뱅킹 자동이체 메뉴에서 조회·등록·해지·변경을 확인할 수 있다. 변경 이용시간은 06:00~23:59이며 휴일에는 이용할 수 없다."
+      ],
+      "remainingChecks": [
+        "출금계좌와 입금계좌가 모두 우리은행 계좌인지",
+        "고객이 변경하려는 항목과 실제 등록된 자동이체의 종류",
+        "변경 신청 시점과 이체 예정일",
+        "고객의 실제 변경 결과와 적용 회차는 거래 화면에서 확인"
+      ],
+      "restrictions": [
+        "타행 자동이체 FAQ의 잔액 부족 시 추가 출금 없음 규칙을 당행 계좌간 자동이체에 적용하지 않는다.",
+        "적금·펀드·IRP·대출계좌 자동이체에는 별도 상품 기준이 있을 수 있으므로 이 분기의 일반 절차만으로 결과를 확정하지 않는다.",
+        "변경 메뉴와 신청 기한만으로 이번 회차 적용이나 거래 완료를 보장하지 않는다.",
+        "입금 은행이 불명확하면 당행 자동이체로 단정하지 않는다."
+      ],
+      "documentRequirements": [],
+      "executionPaths": [
+        {
+          "surface": "INTERNET_BANKING",
+          "menu": "이체 → 자동이체 → 자동이체 조회/등록/변경/해지",
+          "purpose": "MANAGEMENT_MENU",
+          "requiresCustomerExecution": true
+        }
+      ],
+      "evidenceStatus": "WEB_CHECKED",
+      "consultationAssessment": {
+        "mode": "RUNTIME_CONTEXT_EVALUATION",
+        "policyConditionFields": [
+          "transferType",
           "operation"
         ],
         "customerContextFields": [

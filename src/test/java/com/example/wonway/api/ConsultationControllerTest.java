@@ -1,6 +1,7 @@
 package com.example.wonway.api;
 
 import com.example.wonway.agent.AgentService;
+import com.example.wonway.agent.ConversationMemory;
 import com.example.wonway.agent.model.AgentResult;
 import com.example.wonway.common.contract.ChannelRecommendation;
 import com.example.wonway.common.contract.ChannelType;
@@ -34,7 +35,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * 실제 세션 서비스와 가짜(Mock) AgentService로 HTTP 계약을 검증합니다.
  */
 @WebMvcTest(ConsultationController.class)
-@Import({InMemoryConsultationSessionService.class, GlobalExceptionHandler.class})
+@Import({InMemoryConsultationSessionService.class, ConversationMemory.class, GlobalExceptionHandler.class})
 class ConsultationControllerTest {
 
     private static final String BASE = "/api/v1/consultations";
@@ -149,7 +150,8 @@ class ConsultationControllerTest {
         sendMessage(id, "질문")
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.recommendations.length()").value(1))
-                .andExpect(jsonPath("$.recommendations[0].channel").value("MOBILE_APP"));
+                .andExpect(jsonPath("$.recommendations[0].channel").value("MOBILE_APP"))
+                .andExpect(jsonPath("$.recommendations[0].processable").value(true));
     }
 
     private UUID startSession() throws Exception {

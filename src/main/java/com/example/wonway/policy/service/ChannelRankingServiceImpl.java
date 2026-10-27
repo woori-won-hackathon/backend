@@ -9,7 +9,7 @@ import java.util.*;
 
 @Service
 public class ChannelRankingServiceImpl implements ChannelRankingService {
-    public static final String SCORING_VERSION="context-v1-40-20-15-15-10";
+    public static final String SCORING_VERSION="context-v2-guidance-comparison";
     private final PolicyServiceImpl policies;
     private final ChannelCapabilityProvider capabilities;
     public ChannelRankingServiceImpl(PolicyServiceImpl policies,ChannelCapabilityProvider capabilities) {
@@ -58,18 +58,8 @@ public class ChannelRankingServiceImpl implements ChannelRankingService {
             else if(needsIndividual && cap.identityNeededForIndividualCheck() && !Boolean.TRUE.equals(request.identityVerificationAvailable())) {
                 eligibility=request.identityVerificationAvailable()==null?"UNKNOWN":"INELIGIBLE";reasons.add("개별 확인에 필요한 인증 수단 이용 가능 여부 미충족·미확인");
             }
-            if(cap.channel()==ChannelType.CHATBOT) {
-                if(needsIndividual || (c.requestGoal().equals("SELF_SERVICE_GUIDANCE") && Boolean.TRUE.equals(c.selfServiceAttemptFailed()))) {
-                    eligibility="INELIGIBLE";reasons.add("개별 확인 또는 이미 실패한 셀프서비스 안내를 반복해야 하므로 제외");
-                }
-                if(c.preferredChannel()!=null && !c.preferredChannel().equals("CHATBOT")) {eligibility="INELIGIBLE";reasons.add("고객이 사람 상담을 명시적으로 요청");}
-            }
-            if(cap.channel()==ChannelType.EMAIL) {
-                if(urgent || Boolean.TRUE.equals(c.realTimeConversationNeeded()) || Boolean.FALSE.equals(c.acceptsAsyncReply())) {
-                    eligibility="INELIGIBLE";reasons.add("긴급 대응 또는 실시간 문답 필요와 비동기 회신이 맞지 않음");
-                } else if(c.urgent()==null || c.acceptsAsyncReply()==null || c.realTimeConversationNeeded()==null) {
-                    eligibility="UNKNOWN";reasons.add("비긴급 여부·비동기 회신 수용·실시간 문답 필요 여부 미확인");
-                }
+            if(cap.channel()==ChannelType.CHATBOT && needsIndividual) {
+                eligibility="INELIGIBLE";reasons.add("개별 계좌 확인은 챗봇에서 지원하지 않음");
             }
             if(!eligibility.equals("ELIGIBLE")) {
                 excluded.add(new ChannelEvaluation.Decision(cap.channel(),eligibility,null,null,List.copyOf(reasons),codes));continue;
@@ -81,6 +71,27 @@ public class ChannelRankingServiceImpl implements ChannelRankingService {
                 (Boolean.TRUE.equals(c.realTimeConversationNeeded())?15:
                     Boolean.FALSE.equals(c.realTimeConversationNeeded()) && Boolean.TRUE.equals(c.acceptsAsyncReply())?5:8):12;
             int preference=cap.channel().name().equals(c.preferredChannel())?10:0;
+            // Guidance suitability affects order, not whether a supported channel appears at all.
+            if(cap.channel()==ChannelType.EMAIL) {
+                if(urgent || Boolean.TRUE.equals(c.realTimeConversationNeeded()) || Boolean.FALSE.equals(c.acceptsAsyncReply())) {
+                    timing=0;interaction=0;
+                    reasons.add("고객안내: 이메일은 답변을 기다리는 방식이라 현재 상황에서는 후순위로 안내해요.");
+                } else if(c.urgent()==null || c.acceptsAsyncReply()==null || c.realTimeConversationNeeded()==null) {
+                    interaction=0;
+                    reasons.add("고객안내: 이메일은 나중에 답변받는 방식이며, 관련 선호가 확인되지 않아 보수적으로 평가했어요.");
+                }
+            }
+            if(cap.channel()==ChannelType.CHATBOT) {
+                if(urgent)timing=10;
+                if(c.requestGoal().equals("SELF_SERVICE_GUIDANCE") && Boolean.TRUE.equals(c.selfServiceAttemptFailed())) {
+                    timing=0;interaction=0;access=0;
+                    reasons.add("고객안내: 이미 직접 처리를 시도해 실패하셨으므로 같은 메뉴 안내는 후순위로 두었어요.");
+                }
+                if(c.preferredChannel()!=null && !c.preferredChannel().equals("CHATBOT")) {
+                    preference=-10;
+                    reasons.add("고객안내: 사람 상담을 원하셔서 챗봇 안내는 후순위로 평가했어요.");
+                }
+            }
             reasons.add("상담 목적 지원 +"+completion+" (실제 금융업무 실행 완료 의미 아님)");
             reasons.add("응답 방식 적합성 +"+timing+" (실제 대기시간은 평가하지 않음)");
             reasons.add(access==0?"셀프서비스 이용 가능 미확인·불가: 접근성 점수 미부여":"이용 경로·인증 수단 조건 충족 +"+access+" (실제 본인인증은 별도)");

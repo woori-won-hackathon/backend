@@ -1314,6 +1314,38 @@
           }
         }
       ]
+    },
+{
+  "policyCode": "INTRABANK_AUTO",
+  "intent": "INTRABANK_AUTO_TRANSFER",
+  "title": "우리은행 계좌간 자동이체 등록·변경·해지 안내",
+  "customerScope": "FAQ_CONDITION_DEPENDENT",
+  "productScope": "INTRABANK_TRANSFER",
+  "conditionBranches": [
+    {
+      "branchCode": "INTRABANK_AUTO_GUIDE",
+      "conditions": {
+        "all": [
+          {
+            "field": "transferType",
+            "op": "EQ",
+            "value": "INTRABANK"
+          },
+          {
+            "field": "operation",
+            "op": "IN",
+            "value": [
+              "REGISTER",
+              "CHANGE",
+              "CHANGE_DATE",
+              "CANCEL",
+              "LOOKUP"
+            ]
+          }
+        ]
+      }
     }
   ]
+}
+]
 }

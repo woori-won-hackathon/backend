@@ -37,13 +37,28 @@ class ChannelRankingServiceImplTest extends PolicyServiceImplTest {
     @Test void samePolicyContextAndSnapshotProduceSameScoresAndReasons() {
         assertEquals(ranking.evaluate(request(general())),ranking.evaluate(request(general())));
     }
-    @Test void urgentRequestsNeverWaitForEmail() {
+    @Test void urgentRequestsKeepEmailAsLowerPriorityInsteadOfRemovingIt() {
         var result=ranking.evaluate(request(new ConsultationContext("SELF_SERVICE_GUIDANCE",false,false,true,true,true,false,null)));
-        assertTrue(result.recommendations().stream().noneMatch(r->r.channel()==ChannelType.EMAIL));
+        assertEquals(3,result.recommendations().size());
+        assertEquals(ChannelType.PHONE,result.recommendations().getFirst().channel());
+        var email=result.recommendations().stream().filter(r->r.channel()==ChannelType.EMAIL).findFirst().orElseThrow();
+        assertTrue(email.reasons().stream().anyMatch(reason->reason.contains("후순위")));
+        assertTrue(email.score()<result.recommendations().getFirst().score());
     }
     @Test void unknownEmailConditionsAreNotAssumed() {
         var result=ranking.evaluate(request(new ConsultationContext("GENERAL_GUIDANCE",false,true,false,null,null,null,null)));
-        assertTrue(result.decisions().stream().anyMatch(d->d.channel()==ChannelType.EMAIL && d.eligibility().equals("UNKNOWN")));
+        assertEquals(List.of(ChannelType.CHATBOT,ChannelType.PHONE,ChannelType.EMAIL),
+                result.recommendations().stream().map(ChannelRecommendation::channel).toList());
+        assertTrue(result.decisions().stream().allMatch(d->d.eligibility().equals("ELIGIBLE")));
+        assertTrue(result.recommendations().getLast().reasons().stream().anyMatch(reason->reason.contains("확인되지 않아")));
+    }
+
+    @Test void preferredHumanChannelAndFailedSelfServiceStillCompareAllGuidanceChannels() {
+        var result=ranking.evaluate(request(new ConsultationContext("SELF_SERVICE_GUIDANCE",false,true,true,false,false,true,"PHONE")));
+        assertEquals(3,result.recommendations().size());
+        assertEquals(ChannelType.PHONE,result.recommendations().getFirst().channel());
+        assertTrue(result.recommendations().stream().anyMatch(r->r.channel()==ChannelType.CHATBOT));
+        assertTrue(result.recommendations().stream().anyMatch(r->r.channel()==ChannelType.EMAIL));
     }
     @Test void forgedPolicyContentIsIgnoredAndUnknownCodesRejected() {
         var forged=new PolicyResult(999L,"INTERBANK_AUTO","FORGED","PHONE SCORE 999",null,null);
