@@ -1,0 +1,72 @@
+package com.example.wonway.agent;
+
+import com.example.wonway.common.contract.*;
+import com.example.wonway.policy.model.*;
+import com.example.wonway.policy.service.*;
+import org.springframework.ai.tool.annotation.Tool;
+import org.springframework.ai.tool.annotation.ToolParam;
+import java.util.List;
+import java.util.Map;
+
+/** A 연결 참고. @Component singleton으로 등록하지 않고 chat 요청마다 생성한다. */
+public final class ConsultationTools {
+    private final PolicyService policies;
+    private final ChannelRankingService channels;
+    private PolicyEvaluation lastPolicy;
+    private ChannelEvaluation lastRanking;
+
+    public ConsultationTools(PolicyService policies, ChannelRankingService channels) {
+        this.policies=policies;
+        this.channels=channels;
+    }
+
+    @Tool(name="findApplicablePolicies", description="현재 사용자 메시지에서 추출한 사실로 등록 FAQ의 적용 조건을 조회한다. 이전 요청의 사실을 합치지 않고 미언급 사실은 추측하지 않는다. NEEDS_INFORMATION이면 답을 바꾸는 누락 조건만 확인한다.")
+    public PolicyEvaluation findApplicablePolicies(
+            String intent,
+            @ToolParam(required=false) String customerType,
+            @ToolParam(required=false) String productType,
+            @ToolParam(required=false) Boolean requiresIdentityVerification,
+            @ToolParam(required=false) Map<String,Object> facts) {
+        lastPolicy=null;
+        lastRanking=null;
+        lastPolicy=policies.evaluate(new PolicySearchCondition(intent,customerType,productType,requiresIdentityVerification,facts));
+        return lastPolicy;
+    }
+
+    @Tool(name="rankConsultationChannels", description="현재 사용자 메시지에서 확인된 고객 상황과 이번 요청에서 조회한 서버 정책으로 챗·전화·이메일을 평가한다. 점수·정책 본문·운영 상태를 입력하지 않는다. 미언급 Boolean은 null이다.")
+    public ChannelEvaluation rankConsultationChannels(
+            String intent,
+            @ToolParam(required=false) String customerType,
+            @ToolParam(required=false) String productType,
+            @ToolParam(required=false) Map<String,Object> facts,
+            String requestGoal,
+            @ToolParam(required=false) Boolean needsAccountSpecificCheck,
+            @ToolParam(required=false) Boolean selfServiceAvailable,
+            @ToolParam(required=false) Boolean selfServiceAttemptFailed,
+            @ToolParam(required=false) Boolean urgent,
+            @ToolParam(required=false) Boolean acceptsAsyncReply,
+            @ToolParam(required=false) Boolean realTimeConversationNeeded,
+            @ToolParam(required=false) String preferredChannel,
+            @ToolParam(required=false) Boolean identityVerificationAvailable) {
+        lastPolicy=null;
+        lastRanking=null;
+        lastPolicy=policies.evaluate(new PolicySearchCondition(intent,customerType,productType,null,facts));
+        if(lastPolicy.status()!=PolicyEvaluation.Status.MATCHED) {
+            // 도구가 순서를 어겨 호출돼도 조건 미확인 정책을 강제로 추천하지 않는다.
+            lastRanking=new ChannelEvaluation(lastPolicy.status().name(),List.of(),List.of(),"NOT_EVALUATED");
+            return lastRanking;
+        }
+        var context=new ConsultationContext(requestGoal,needsAccountSpecificCheck,selfServiceAvailable,
+                selfServiceAttemptFailed,urgent,acceptsAsyncReply,realTimeConversationNeeded,preferredChannel);
+        lastRanking=channels.evaluate(new ChannelRankingCondition(intent,customerType,productType,
+                identityVerificationAvailable,lastPolicy.policies(),facts,context));
+        return lastRanking;
+    }
+
+    // A 서버 코드에서만 사용. @Tool로 노출하지 않는다.
+    public List<ChannelRecommendation> verifiedRecommendations() {
+        return lastRanking!=null && "RANKED".equals(lastRanking.status())?lastRanking.recommendations():List.of();
+    }
+    public PolicyEvaluation lastPolicyEvaluation() {return lastPolicy;}
+    public ChannelEvaluation lastChannelEvaluation() {return lastRanking;}
+}
