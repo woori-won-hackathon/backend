@@ -1,82 +1,44 @@
-# WONWAY backend
+# 백엔드 설정 및 실행
 
-Java 21 / Spring Boot / Spring AI 기반 상담 API입니다. 실제 금융거래·상담 연결·예약을 실행하지 않습니다.
+1. MySQL을 실행하고 데이터베이스를 생성합니다.
 
-## 실행과 검증
+   ```sql
+   CREATE DATABASE IF NOT EXISTS wonway
+     CHARACTER SET utf8mb4
+     COLLATE utf8mb4_unicode_ci;
+   ```
 
-기존 로컬 환경의 DB 및 모델 설정을 사용합니다. 실제 환경변수 파일과 비밀값은 Git에 포함하지 않습니다.
+2. `backend/.env`를 생성합니다.
 
-```powershell
-.\gradlew.bat bootRun
-.\gradlew.bat test --offline --no-daemon
-```
+   ```dotenv
+   DB_USERNAME=로컬_MySQL_사용자명
+   DB_PASSWORD=로컬_MySQL_비밀번호
+   OPENAI_API_KEY=OpenAI_API_키
+   SPRING_PROFILES_ACTIVE=local,policy-demo
+   SPRING_DATASOURCE_URL=jdbc:mysql://localhost:3306/wonway?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+   POLICY_SEED_ENABLED=false
+   POLICY_SEED_LOCATION=classpath:policy/policies.json
+   ```
 
-DB·모델 연결 정보는 실행 환경에서 제공해야 합니다. 외부 DB를 사용하는 정책 통합 테스트는 해당 테스트의 실행 조건에 따라 생략될 수 있습니다. 단위 테스트의 모델은 가짜 모델이며 실제 모델 품질·응답 속도를 보장하지 않습니다.
+3. 정책 데이터를 적재합니다.
 
-## 프론트 연동
+   ```sh
+   cd backend
+   POLICY_MYSQL_IMPORT=true POLICY_SEED_LOCATION=classpath:policy/policies.json ./gradlew test --tests 'com.example.wonway.policy.persistence.PolicyMySqlImportTest' --no-daemon --rerun-tasks
+   ```
 
-- `POST /api/v1/consultations`: 세션 생성, 201 및 `sessionId` 반환
-- `POST /api/v1/consultations/{sessionId}/messages`: `{ "message": "문의" }`, 200 반환
-- `DELETE /api/v1/consultations/{sessionId}`: 세션 종료 및 대화 삭제, 204 반환
+4. 백엔드를 실행합니다.
 
-메시지 응답은 `sessionId`, `answer`, `recommendations`, `consultationSummary`, `guidance`를 포함합니다. `consultationSummary`는 짧은 업무 목적이며, `guidance`는 적용 가능한 정책 분기의 공식 절차·유의사항·확인 사항을 별도로 담습니다. 추천 항목은 `channel`, `score`, `rank`, `processable`, `reasons`, `officialPageUrl`을 포함합니다. 동점은 같은 순위입니다. 고객용 이유에는 내부 점수 항목 대신 채널 지원 범위와 확인된 이용 조건을 표시합니다. `processable`은 현재 상담 목적의 채널 지원 여부이며 금융업무 실행 완료를 의미하지 않습니다.
+   ```sh
+   ./gradlew bootRun
+   ```
 
-추가로 `responseType`과 `actions`를 반환합니다. `responseType`은 검증된 정책·채널 결과에 따라 `FOLLOW_UP`, `GUIDANCE`, `CHANNEL_RECOMMENDATION`, `UNRESOLVED` 중 하나로 결정합니다. 업무 자체가 불명확하거나 정책/채널 조건이 부족하면 `FOLLOW_UP`으로 반환하고 추천·메뉴는 비웁니다. 프론트는 채팅에서 추가 답변을 받고, 추천이 완료된 경우에만 추천 결과 화면을 표시합니다.
+5. 로그에서 아래 문구를 확인합니다.
 
-`actions`는 최대 1개의 `{menuId,label,demo:true}`입니다. 추천이 완료되고 CHATBOT이 추천에 포함되며 정책 분기가 APPLICABLE인 경우에만 서버의 고정 매핑으로 제공합니다. `INTERBANK_AUTO_GUIDE` / `INTRABANK_AUTO_GUIDE`는 `AUTO_TRANSFER`, `CARD_REPORT` / `CARD_UNKNOWN_PAYMENT`는 `CARD_LOSS` 목업으로 연결합니다. 프론트는 CHATBOT 선택 후에만 이 버튼을 표시합니다. 다른 채널 선택 시에는 해당 채널 안내와 제공된 공식 링크를 표시합니다.
+   ```text
+   Started WonwayApplication
+   ```
 
-프론트는 AI 도구 호출을 기다리도록 요청 제한을 90초로 설정합니다. 이는 처리 속도 최적화나 서버 모델 호출의 취소를 보장하는 설정이 아닙니다. 브라우저 요청이 끊겨도 서버 처리가 완료될 수 있으므로 자동 재전송하지 않습니다.
+6. 백엔드가 실행된 상태에서 [프런트엔드 실행 방법](../frontend/README.md)을 진행합니다.
 
-INFO 로그에는 세션별 AI 생성 시작(보관 대화 수), 정책 조회 결과(상태·일치/누락 조건 개수), 채널 평가 결과(상태·추천 개수), 최종 응답 완료(상태·추천/메뉴 개수·소요 ms)를 기록합니다. 고객 원문·추출한 사실 값·모델 답변은 기록하지 않습니다. 완료 로그가 없으면 이 로그만으로 전체 처리 성공을 판단하지 않습니다.
-
-## 세션별 대화
-
-`ConversationMemory`는 서버 메모리에 성공한 사용자/AI 대화 쌍을 세션별 최근 8회까지 유지합니다. 각 턴에는 누적 확인 조건도 함께 저장하므로 대화 8회가 지나도 기존 확인 조건을 잃지 않습니다. 모델에는 최근 사용자/AI 대화와 누적 확인 조건을 전달하고 다른 세션의 내용은 전달하지 않습니다. 같은 세션의 동시 요청은 순서대로 처리하고 다른 세션은 독립적으로 진행합니다.
-
-프로덕션은 `ToolCallingAgentModelGateway`를 사용합니다. LLM이 대화와 도구 결과를 보고 조건 갱신·정책 조회·채널 평가 도구 호출, 추가 질문, 최종 안내 중 다음 행동을 선택합니다. 서버는 모델이 요청한 호출만 Spring AI `ToolCallingManager`로 실행하고 결과를 다시 모델에 전달합니다. 요청당 모델 호출은 최대 8회, 도구 호출은 최대 12회이며 허용된 세 도구 외의 호출은 거절합니다. 도구 호출·결과 메시지는 해당 요청 안에서만 유지하고 세션에는 최종 대화와 확인 조건만 저장합니다.
-
-직접 모델을 호출할 때는 해당 모델의 옵션을 복사해 공급자별 타입·모델명·요청 설정을 유지하고 요청별 도구만 추가합니다. 모델 실패 로그에는 허용된 오류 분류·HTTP 상태·예외 클래스명만 기록하며 공급자 오류 본문이나 원래 예외를 첨부하지 않습니다. 인증, 권한, 요청 한도, 크레딧·사용 한도, 도구 스키마, 연결 오류를 구분합니다. 오류 분류 기준은 [OpenAI Docs](https://developers.openai.com/api/docs/guides/error-codes)를 참고하세요.
-
-`updateConsultation`은 의도·조건 변경분과 현재 사용자 원문의 근거를 받아 `ConsultationStateMerger`로 검증·병합합니다. `findApplicablePolicies`는 인자 없이 이 검증된 조건으로 정책을 조회합니다. `rankConsultationChannels`는 상담 목적만 입력받고 고객 조건·정책·점수·URL은 서버 값을 사용합니다. 현재 요청에서 MATCHED 정책을 조회하기 전에는 채널 평가를 실행하지 않습니다. 조건을 정정하면 이미 조회한 정책·채널 결과를 무효화합니다. 원문 근거 검사는 문자열·타입 검증이며 LLM의 의미 해석 오류까지 제거하지는 않습니다.
-
-받는 은행이 미확인인 자동이체는 당행·타행을 추측하지 않습니다. 당행/타행 정정 시 다른 조건을 유지하고, 업무 전환 시 이전 조건을 지웁니다. 일반적인 '날짜를 바꾸고 싶다'는 방법 안내이며 개인 계좌라는 표현만으로 실제 조회 요청으로 분류하지 않습니다. 확인되지 않은 Boolean은 false로 채우지 않습니다. LLM이 누락 조건을 질문하되 서버는 필요한 조건·정책·채널 결과 없이 추천을 완료하지 못하게 검증합니다. 추가 질문은 LLM 문안을 사용하고 추천의 점수·순위·이유·공식 URL과 정책 안내·목업 메뉴는 서버 결과로 구성합니다. 추천 도입 문장은 서버가 제공하여 LLM이 거래 완료나 임의의 채널을 주장하지 않도록 합니다. `common`, 정책 서비스, API 계약은 유지합니다.
-
-### 안내 채널 비교
-
-`context-v2-guidance-comparison`은 지원이 확인된 챗봇·전화·이메일을 방법 안내 후보로 모두 평가합니다. 이메일의 긴급성·비동기 답변 수용·실시간 대화 조건은 제외 조건이 아니라 적합도 점수입니다. 미확인 조건은 고객이 동의했다고 가정하지 않고 문답 적합도 점수를 주지 않으며, 그 이유를 고객에게 표시합니다. 앱 처리 실패나 사람 상담 선호도 챗봇을 제외하지 않고 후순위로 평가합니다. 긴급한 상황에서는 이메일을 기다리기보다 즉시 문답 가능한 채널을 우선합니다.
-
-`policy-demo`에서 자동이체 방법 안내는 세 채널을 모두 반환합니다. 비동기 답변 선호가 미확인인 보통의 앱 이용 가능 상황은 챗봇 → 전화 → 이메일이며, 충분한 비동기 선호가 확인되면 이메일과 전화의 순위가 달라질 수 있습니다. 실제 계좌별 조회·인증, 정책 미지원, 채널 운영 근거 미확인은 적합도 차이와 구분하므로 기존 지원 검증은 유지합니다. 실거래 실행은 지원하지 않습니다.
-
-실패한 생성은 대화에 추가하지 않습니다. 세션 종료는 모델 호출 완료를 기다리지 않고 보관 중인 대화를 제거하며, 진행 중인 응답도 종료된 대화를 복구하지 못합니다. 새 상담은 새 세션으로 시작합니다. 대화는 DB·파일·로그에 저장하지 않으며 서버 재시작 시 없어집니다.
-
-세션 만료/TTL과 다중 서버 간 기록 공유는 아직 구현하지 않았습니다. 명시적으로 종료되지 않은 활성 세션은 서버가 재시작될 때까지 남습니다. 종료 직전 진행 중인 모델 호출이 이미 받은 대화 스냅샷은 호출이 끝날 때까지 해당 요청 안에 남을 수 있습니다.
-
-## 정책 DB 확인과 적재
-
-정책 JSON 파일이 존재하는 것만으로 DB에 적재되지는 않습니다. 다음은 설정된 `wonway` DB의 정책 테이블과 파일 일치 여부를 읽기 전용으로 확인하는 명령입니다. 스키마 변경과 자동 적재는 비활성화합니다.
-
-```powershell
-$env:POLICY_MYSQL_INSPECT='true'
-.\gradlew.bat test --tests 'com.example.wonway.policy.persistence.PolicyDatabaseInspectionTest' --offline --no-daemon --rerun-tasks
-```
-
-기존 일회성 적재 절차는 `policy/README.md`와 `PolicyMySqlImportTest`를 참고하세요. 동일 데이터는 중복 적재하지 않고, 다른 데이터나 부분 적재 상태를 자동 덮어쓰지 않습니다. 원본의 DRAFT 상태를 그대로 보존합니다. 개발 시연에서는 `policy-demo` 프로필을 사용해야 DRAFT 정책과 모의 채널 운영정보를 평가할 수 있습니다. 이 프로필 자체는 정책을 적재하지 않습니다.
-
-정책 폴더의 기존 인수인계 문서 중 ‘모든 요청이 독립적이며 이전 사용자 진술도 사용하지 않는다’는 설명은 이 브랜치의 대화 유지 기능 이전 동작입니다. 정책·추천 자체는 계속 요청마다 재검증하지만, 사용자 대화의 맥락은 이제 세션 안에서 이어갑니다.
-
-## 실제 모델 채널 진단
-
-아래 실제 모델 성공 기록은 이전 단계형 구현에서 확인한 결과입니다. 새 Tool Calling 구현의 기본 테스트는 가짜 모델의 호출 응답과 실제 Spring AI 도구 실행기로 검증하며 실제 LLM 품질을 보장하지 않습니다. 새 구현의 실제 모델 검증은 유효한 로컬 키와 해당 시나리오의 정책 데이터가 있는 DB에서 아래 명령을 명시적으로 실행해야 합니다.
-
-`LiveChannelToolDiagnosisTest`는 `WONWAY_LIVE_DIAGNOSIS=true`를 명시했을 때만 실제 AI를 호출합니다. 기본 테스트에서는 실행하지 않습니다. 정책은 읽기 전용으로 조회하며, 성공 진단에서 만든 세션은 종료합니다.
-
-```powershell
-$env:WONWAY_LIVE_DIAGNOSIS='true'
-.\gradlew.bat test --tests 'com.example.wonway.agent.LiveChannelToolDiagnosisTest' --offline --no-daemon --rerun-tasks
-```
-
-정책 상태·채널 상태·채널별 제외 사유를 기록합니다. 고객 조건 부족으로 모든 채널이 UNKNOWN인 경우 문답을 계속하며, 운영정보 검토나 확정적으로 추천 불가인 경우는 성공으로 바꾸지 않습니다. 최종 추천의 `answer`는 선택 안내만 포함하고 상세 절차는 `guidance`로 분리합니다.
-
-방법 안내만 요청하고 모바일뱅킹 이용 가능·비긴급·비동기 회신 수용·실시간 상담 불필요를 명시한 진단은 `CHANNEL_RECOMMENDATION`, 챗봇/이메일/전화 순위, `AUTO_TRANSFER` 목업을 반환했습니다. 이는 모의 채널 운영정보를 사용하는 개발 프로필의 실제 모델 진단 결과입니다.
-
-자연스러운 생활비 날짜 변경 문의 → 받는 은행 답변 → 앱 이용 가능 답변 → 세 채널 추천·목업 제공 흐름도 실제 모델/DB로 검증합니다. 다만 모든 표현에 대한 AI 추출 정확도를 보장하는 것은 아닙니다. 원문 근거 검사는 형식 검증이며 의미 해석 자체에는 모델의 오류 가능성이 남습니다.
+7. 종료하려면 백엔드 터미널에서 `Ctrl+C`를 누릅니다.
